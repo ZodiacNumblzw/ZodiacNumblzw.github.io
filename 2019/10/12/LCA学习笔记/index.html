@@ -6,16 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://ZodiacNumblzw.github.io">
-  <title>Archives: 2020/1 | SakuyaのBlog</title>
+  <title>LCA学习笔记 | SakuyaのBlog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="SakuyaのBlog">
-<meta property="og:url" content="http://zodiacnumblzw.github.io/archives/2020/01/index.html">
+  <meta name="description" content="LCA LCA即为最近公共祖先，这个定义只在有根树中出现  朴素做法 q次查询，每次查询给定u,v两个点，求LCA(u,v)  处理出两个点到根节点的一条链上的节点编号，然后倒序遍历这两个节点编号序列，最后一个相同的值即为LCA(u,v)的编号 理想状态下，当这棵树为完全二叉树时，时间复杂度为$O(qlog N)$ 当树退化成链的情况下，时间复杂度为$O(q*N)$ 高效做法 一般有两种实现方法：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LCA学习笔记">
+<meta property="og:url" content="http://zodiacnumblzw.github.io/2019/10/12/LCA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="SakuyaのBlog">
+<meta property="og:description" content="LCA LCA即为最近公共祖先，这个定义只在有根树中出现  朴素做法 q次查询，每次查询给定u,v两个点，求LCA(u,v)  处理出两个点到根节点的一条链上的节点编号，然后倒序遍历这两个节点编号序列，最后一个相同的值即为LCA(u,v)的编号 理想状态下，当这棵树为完全二叉树时，时间复杂度为$O(qlog N)$ 当树退化成链的情况下，时间复杂度为$O(q*N)$ 高效做法 一般有两种实现方法：">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-10-12T06:31:29.000Z">
+<meta property="article:modified_time" content="2020-03-03T10:42:52.950Z">
 <meta property="article:author" content="Sakuya">
+<meta property="article:tag" content="ST表">
+<meta property="article:tag" content="tarjan">
+<meta property="article:tag" content="LCA">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="SakuyaのBlog" type="application/atom+xml">
@@ -192,65 +199,272 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-LCA学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/01/17/%E4%B8%BB%E5%B8%AD%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-        <time datetime="2020-01-17T11:07:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-17</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/01/17/%E4%B8%BB%E5%B8%AD%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">主席树学习笔记</a>
   
+    <h1 class="article-title" itemprop="name">
+      LCA学习笔记
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2019/10/12/LCA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+        <time datetime="2019-10-12T06:31:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-12</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">760字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="LCA"><a href="#LCA" class="headerlink" title="LCA"></a>LCA</h1><blockquote>
+<p><strong>LCA即为最近公共祖先，这个定义只在有根树中出现</strong></p>
+</blockquote>
+<h3 id="朴素做法"><a href="#朴素做法" class="headerlink" title="朴素做法"></a>朴素做法</h3><blockquote>
+<p>q次查询，每次查询给定u,v两个点，求LCA(u,v)</p>
+</blockquote>
+<p>处理出两个点到根节点的一条链上的节点编号，然后倒序遍历这两个节点编号序列，最后一个相同的值即为LCA(u,v)的编号</p>
+<p>理想状态下，当这棵树为完全二叉树时，时间复杂度为$O(qlog N)$</p>
+<p>当树退化成链的情况下，时间复杂度为$O(q*N)$</p>
+<h3 id="高效做法"><a href="#高效做法" class="headerlink" title="高效做法"></a>高效做法</h3><blockquote>
+<p>一般有两种实现方法：</p>
+<p>1：在线做法，利用ST表倍增</p>
+<p>2：离线做法，tarjan算法</p>
+</blockquote>
+<h3 id="利用ST表解决LCA问题"><a href="#利用ST表解决LCA问题" class="headerlink" title="利用ST表解决LCA问题"></a>利用ST表解决LCA问题</h3><blockquote>
+<p>LCA在利用ST表实现时，先用一个dfs处理出由根节点出发时的欧拉序列，F[i]为欧拉序列第i个点的节点编号，rmq[i]为F[i]的节点深度，P[i]为第i个节点第一次出现在欧拉序列中的位置，因此，假设对于u,v这两个点LCA(u,v)就是[P[u],P[v]]这段区间内深度最小的节点的编号，用ST表维护即可，类似RMQ，但RMQ维护的是最值，而这里的ST表维护最小值的下标</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">200010</span>;</span><br><span class="line"><span class="keyword">int</span> rmq[<span class="number">2</span>*MAXN];<span class="comment">//rmq 数组，就是欧拉序列对应的深度序列</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ST</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="comment">//mm[i]代表i在二进制下的位数</span></span><br><span class="line">    <span class="keyword">int</span> mm[<span class="number">2</span>*MAXN];</span><br><span class="line">    <span class="keyword">int</span> dp[<span class="number">2</span>*MAXN][<span class="number">22</span>];<span class="comment">//最小值对应的下标</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        mm[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            mm[i] = ((i&amp;(i<span class="number">-1</span>)) == <span class="number">0</span>)?mm[i<span class="number">-1</span>]+<span class="number">1</span>:mm[i<span class="number">-1</span>];</span><br><span class="line">            dp[i][<span class="number">0</span>] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= mm[n]; j++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span>&lt;&lt;j) - <span class="number">1</span> &lt;= n; i++)</span><br><span class="line">                dp[i][j] = rmq[dp[i][j<span class="number">-1</span>]] &lt; rmq[dp[i+(<span class="number">1</span>&lt;&lt;(j<span class="number">-1</span>))][j<span class="number">-1</span>]]?dp[i][j<span class="number">-1</span>]:dp[i+(<span class="number">1</span>&lt;&lt;(j<span class="number">-1</span>))][j<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//查询 [a,b] 之间最小值的下标</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(a &gt; b)</span><br><span class="line">            swap(a,b);</span><br><span class="line">        <span class="keyword">int</span> k = mm[b-a+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">return</span> rmq[dp[a][k]] &lt;= rmq[dp[b-(<span class="number">1</span>&lt;&lt;k)+<span class="number">1</span>][k]]?dp[a][k]:dp[b-(<span class="number">1</span>&lt;&lt;k)+<span class="number">1</span>][k];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//边的结构体定义</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> to,next;</span><br><span class="line">&#125;;</span><br><span class="line">Edge edge[MAXN*<span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> tot,head[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> F[MAXN*<span class="number">2</span>];<span class="comment">//欧拉序列，就是 dfs 遍历的顺序，长度为 2*n-1, 下标从 1 开始</span></span><br><span class="line"><span class="keyword">int</span> P[MAXN];<span class="comment">//P[i] 表示点 i 在 F 中第一次出现的位置</span></span><br><span class="line"><span class="keyword">int</span> cnt;</span><br><span class="line">ST st;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tot = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(head,<span class="number">-1</span>,<span class="keyword">sizeof</span>(head));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//加边，无向边需要加两次</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    edge[tot].to = v;</span><br><span class="line">    edge[tot].next = head[u];</span><br><span class="line">    head[u] = tot++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> pre,<span class="keyword">int</span> dep)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    F[++cnt] = u;</span><br><span class="line">    rmq[cnt] = dep;</span><br><span class="line">    P[u] = cnt;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = head[u]; i != <span class="number">-1</span>; i = edge[i].next)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> v = edge[i].to;</span><br><span class="line">        <span class="keyword">if</span>(v == pre)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        dfs(v,u,dep+<span class="number">1</span>);</span><br><span class="line">        F[++cnt] = u;</span><br><span class="line">        rmq[cnt] = dep;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//查询 LCA 前的初始化</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LCA_init</span><span class="params">(<span class="keyword">int</span> root,<span class="keyword">int</span> node_num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cnt = <span class="number">0</span>;</span><br><span class="line">    dfs(root,root,<span class="number">0</span>);</span><br><span class="line">    st.init(<span class="number">2</span>*node_num<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//查询 u,v 的 lca 编号</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query_lca</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> F[st.query(P[u],P[v])];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="利用tarjan解决LCA问题"><a href="#利用tarjan解决LCA问题" class="headerlink" title="利用tarjan解决LCA问题"></a>利用tarjan解决LCA问题</h3><blockquote>
+<p>未完待续</p>
+</blockquote>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Sakuya
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://ZodiacNumblzw.github.io/2019/10/12/LCA学习笔记/" title="LCA学习笔记" target="_blank">http://ZodiacNumblzw.github.io/2019/10/12/LCA学习笔记/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">主席树</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ST表</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tarjan</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LCA</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zodiacnumblzw.github.io/2019/10/12/LCA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2020/01/17/%E4%B8%BB%E5%B8%AD%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          主席树学习笔记
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -291,8 +505,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
