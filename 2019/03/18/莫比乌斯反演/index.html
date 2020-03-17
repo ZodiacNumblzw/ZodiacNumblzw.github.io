@@ -18,7 +18,7 @@
 <meta property="og:description" content="莫比乌斯反演前置知识：整除分块  其实这个算法的难点在于公式的推导而不是算法本身 莫比乌斯反演概括起来只有两个式子  $$如果F(d)&#x3D;\sum_{d|n}f(n)$$ $$那么f(d)&#x3D;\sum_{d|n}\mu(\frac{n}{d})*F(n)$$">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-03-18T01:58:37.000Z">
-<meta property="article:modified_time" content="2020-03-17T14:11:10.085Z">
+<meta property="article:modified_time" content="2020-03-17T14:16:27.600Z">
 <meta property="article:author" content="Sakuya">
 <meta property="article:tag" content="数论">
 <meta property="article:tag" content="莫比乌斯反演">
@@ -239,7 +239,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">875字</span>
+      <span class="post-count">876字</span>
     </span>
   </span>
 
@@ -289,7 +289,7 @@
 <p>$$<br>于是Ans=\sum_{d\in prime}\sum_{d|T}\mu(\frac{T}{d})*F(T)<br>$$</p>
 <p><strong><em>Step3:</em></strong><br>$$<br>Ans=\sum_{T=1}^{min(n,m)}F(T)\sum_{d|T\ and\ d\in prime}\mu(\frac{T}{d})<br>$$</p>
 <p>$$<br>我们设h(T)=\sum_{d|T\ and\ d\in prime}\mu(\frac{T}{d})<br>$$</p>
-<p>$$<br>Ans=\sum_{T=1}^{min(n,m)}\lfloor \frac{n}{T} \rfloor <em>\lfloor \frac{m}{T} \rfloor</em>h(T)<br>$$</p>
+<p>$$<br>Ans=\sum_{T=1}^{min(n,m)}\lfloor \frac{n}{T} \rfloor \lfloor \frac{m}{T} \rfloor h(T)<br>$$</p>
 <p>于是，我们只要知道$h(T)$的前缀和，就可以利用整除分块来算$Ans$了</p>
 <p>那么怎么求$h(T)$呢？？</p>
 <p>我们可以先将1到1e7以内素数全部线性筛出来，然后对于每一个素数p，枚举每一个该素数的倍数$X$,$h[X]+=\mu(\frac{X}{p})$即可，时间复杂度$O(n+\frac{n}{logn}*(log(log(n))))$，即$O(n)$</p>
@@ -657,15 +657,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ST表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tarjan</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LCA</a>
+                <a href="javascript:void(0)" class="js-tag color4">主席树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,15 +673,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">主席树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">斜率优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ST表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tarjan</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LCA</a>
               </li>
             
             <div class="clearfix"></div>
