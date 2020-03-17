@@ -6,22 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://ZodiacNumblzw.github.io">
-  <title>斜率dp学习笔记 | SakuyaのBlog</title>
+  <title>Tag: 分治 | SakuyaのBlog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="斜率优化dp 当状态转移方程为$$dp[i]&#x3D;min(dp[j]-a(i)*b(j)+f(i)+g(j)+C)\ \ \ (j&lt;i)$$且$a(i)$单调递增时 如果直接暴力转移，时间复杂度是$O(N^2)$的 我们可以考虑利用斜率优化dp，将复杂度转化为$O(N)$">
-<meta property="og:type" content="article">
-<meta property="og:title" content="斜率dp学习笔记">
-<meta property="og:url" content="http://zodiacnumblzw.github.io/2020/02/03/%E6%96%9C%E7%8E%87dp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="SakuyaのBlog">
+<meta property="og:url" content="http://zodiacnumblzw.github.io/tags/%E5%88%86%E6%B2%BB/index.html">
 <meta property="og:site_name" content="SakuyaのBlog">
-<meta property="og:description" content="斜率优化dp 当状态转移方程为$$dp[i]&#x3D;min(dp[j]-a(i)*b(j)+f(i)+g(j)+C)\ \ \ (j&lt;i)$$且$a(i)$单调递增时 如果直接暴力转移，时间复杂度是$O(N^2)$的 我们可以考虑利用斜率优化dp，将复杂度转化为$O(N)$">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-03T09:29:34.000Z">
-<meta property="article:modified_time" content="2020-03-03T13:21:38.117Z">
 <meta property="article:author" content="Sakuya">
-<meta property="article:tag" content="动态规划">
-<meta property="article:tag" content="斜率优化">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="SakuyaのBlog" type="application/atom+xml">
@@ -206,297 +200,77 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-斜率dp学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-      <header class="article-header">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2020/03/12/CDQ%E5%88%86%E6%B2%BB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+        <time datetime="2020-03-12T06:31:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
+</a>
+
+        </div>
+    	 
   
+    <h1 itemprop="name">
+	
+	  <a class="archive-article-title" href="/2020/03/12/CDQ%E5%88%86%E6%B2%BB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">LCA学习笔记</a>
   
-    <h1 class="article-title" itemprop="name">
-      斜率dp学习笔记
     </h1>
   
 
 
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2020/02/03/%E6%96%9C%E7%8E%87dp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-        <time datetime="2020-02-03T09:29:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-03</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">10分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="斜率优化dp"><a href="#斜率优化dp" class="headerlink" title="斜率优化dp"></a>斜率优化dp</h1><blockquote>
-<p>当状态转移方程为<br>$$<br>dp[i]=min(dp[j]-a(i)*b(j)+f(i)+g(j)+C)\ \ \ (j&lt;i)<br>$$<br>且$a(i)$单调递增时</p>
-<p>如果直接暴力转移，时间复杂度是$O(N^2)$的</p>
-<p>我们可以考虑利用斜率优化dp，将复杂度转化为$O(N)$</p>
-</blockquote>
-<a id="more"></a>
-
-<h3 id="先证明一下"><a href="#先证明一下" class="headerlink" title="先证明一下"></a>先证明一下</h3><blockquote>
-<p>不妨设$k&lt;j&lt;i$。如果在j的时候决策更优，也就是<br>$$<br>dp[j]-a(i)<em>b(j)+f(i)+g(j)&lt;dp[k]-a(i)</em>b(k)+f(i)+g(k)<br>$$</p>
-<p>$$<br>(dp[j]+g(j))-(dp[k]+g(k))&lt;a(i)*(b(j)-b(k))<br>$$</p>
-<p>我们把$dp[j]+g(j)$用$y_j$替换，$dp[k]+g(k)$用$y_k$替换，$b(j)$和$b(k)$分别用$x_j$和$x_k$替换，可以化为<br>$$<br>y_j-y_k&lt;a(i)*(x_j-x_k)<br>$$<br>除到左边可以得到（注意这一步一定要注意不等号的符号和$x_j-x_k$的正负性）<br>$$<br>\frac{y_j-y_k}{x_j-x_k}&lt;a(i)<br>$$<br>这个式子说明，如果$j$，$k$这两个点的斜率是小于$a(i)$的，那么$j$会比$k$更优</p>
-</blockquote>
-<h3 id="斜率dp的证明（重点）"><a href="#斜率dp的证明（重点）" class="headerlink" title="斜率dp的证明（重点）"></a>斜率dp的证明（重点）</h3><blockquote>
-<p>现在我们设$slope(i,j)$为第$i$个点和第$j$个点的斜率（第$i$个点是$(x_i,y_i)$，$x_i,y_i$的意义见上文）</p>
-<p>那么我们如果有$k&lt;j&lt;i&lt;t$且$slope(i,j)&lt;slope(j,k)$的话，那么第$j$个点不会成为决策点（要么$i$比$j$优，要么$k$比$j$优）</p>
-<p>我们考虑$dp[t]$从哪个点转移过来</p>
-<p>如果$slope(i,j)&lt;a(t)$ 那么由上述结论可以知道$i$比$j$更优</p>
-<p>否则$slope(i,j) \geq a(t)$那么$slope(j,k)&gt;slope(i,j) \geq a(t)$ 可知$k$比$j$更优</p>
-</blockquote>
-<p>大家也可以画一下，看一下图形大概是啥样</p>
-<p>我们会发现，此时的$j$点是处于一个向上凸的图形，所以我们必须把$j$点去掉，</p>
-<p>去掉后的图形，实际上就是一个下凸的凸包了，于是我们用一个队列维护这个凸包</p>
-<p>求第$t$个点处的决策点类似于用一个斜率为a(i)的直线从负无穷向上移，第一个触碰到的点就是点$t$的决策点，设为$temp$ 一定满足$slope(temp,temp-1)&lt;a(t)$，并且如果$temp+1$这个点存在，那么$slope(temp,temp+1) \geq a[i]$</p>
-<p>我们又因为知道$a(t)$是单调递增的，所以决策单调性就很显然了</p>
-<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=3507" target="_blank" rel="noopener">HDU 3507 Print Article</a></p>
-<blockquote>
-<h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>给n个数，分成若干段，花费为每一段的和的平方加上段数成C，求最小花费</p>
-</blockquote>
-<blockquote>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>不难得出状态转移方程：<br>$$<br>dp[i]=min(dp[j]+(sum[i]-sum[j])^2+C)\ \ \ (j&lt;i)<br>$$<br>$sum[i]$为前缀和，考虑斜率优化，设$k&lt;j$</p>
-<p>$y_i$为$dp[i]+sum[i]^2$</p>
-<p>$x_i$为$2*sum[i]$</p>
-<p>其余部分看代码吧</p>
-</blockquote>
-<h5 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//author Numb</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> GCC optimize(3)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(linker, <span class="meta-string">"/STACK:1024000000,1024000000"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Hello the_cruel_world!</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ext/pb_ds/assoc_container.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ext/pb_ds/tree_policy.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ext/rope&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_cxx;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_pbds;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ULL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> LD;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">vector</span>&lt;LL&gt; VL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">vector</span>&lt;PII&gt; VPII;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;LL,LL&gt; PLL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">vector</span>&lt;PLL&gt; VPLL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cerr</span>&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T,<span class="keyword">typename</span>... Args&gt;<span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">(T x,Args... args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cerr</span>&lt;&lt;x&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    test(args...);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt; <span class="title">void</span> _<span class="title">R</span>(<span class="title">T</span> &amp;<span class="title">x</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> _R(<span class="keyword">int</span> &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> _R(LL &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> _R(<span class="keyword">double</span> &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lf"</span>, &amp;x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> _R(<span class="keyword">char</span> &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">" %c"</span>, &amp;x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> _R(<span class="keyword">char</span> *x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>, x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">R</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">template&lt;class T, class... U&gt; void R(T &amp;head, U &amp;... tail)</span><br><span class="line">&#123;</span><br><span class="line">    _R(head);</span><br><span class="line">    R(tail...);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt; <span class="title">void</span> _<span class="title">W</span>(<span class="title">const</span> <span class="title">T</span> &amp;<span class="title">x</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> _W(<span class="keyword">const</span> <span class="keyword">int</span> &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> _W(<span class="keyword">const</span> LL &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld"</span>, x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> _W(<span class="keyword">const</span> <span class="keyword">double</span> &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.16f"</span>, x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> _W(<span class="keyword">const</span> <span class="keyword">char</span> &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">putchar</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> _W(<span class="keyword">const</span> <span class="keyword">char</span> *x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>, x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>,<span class="title">class</span> <span class="title">U</span>&gt; <span class="title">void</span> _<span class="title">W</span>(<span class="title">const</span> <span class="title">pair</span>&lt;T,U&gt; &amp;<span class="title">x</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    _W(x.F);</span><br><span class="line">    <span class="built_in">putchar</span>(<span class="string">' '</span>);</span><br><span class="line">    _W(x.S);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt; <span class="title">void</span> _<span class="title">W</span>(<span class="title">const</span> <span class="title">vector</span>&lt;T&gt; &amp;<span class="title">x</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i = x.<span class="built_in">begin</span>(); i != x.<span class="built_in">end</span>(); _W(*i++))</span><br><span class="line">        <span class="keyword">if</span> (i != x.cbegin())</span><br><span class="line">            <span class="built_in">putchar</span>(<span class="string">' '</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">W</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">template&lt;class T, class... U&gt; void W(const T &amp;head, const U &amp;... tail)</span><br><span class="line">&#123;</span><br><span class="line">    _W(head);</span><br><span class="line">    <span class="built_in">putchar</span>(<span class="keyword">sizeof</span>...(tail) ? <span class="string">' '</span> : <span class="string">'\n'</span>);</span><br><span class="line">    W(tail...);</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> HOME</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG(...) &#123;printf(<span class="meta-string">"# "</span>);printf(__VA_ARGS__);puts(<span class="meta-string">""</span>);&#125;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG(...)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> hhh printf(<span class="meta-string">"hhh\n"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x) (cerr&lt;&lt;(#x)&lt;&lt;<span class="meta-string">'='</span>&lt;&lt;(x)&lt;&lt;endl)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> il inline</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ld long double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,a,b) for(register int i=a;i&lt;b;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Rep(i,a,b) for(register int i=a;i&lt;=b;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(i,a,b) for(register int i=b-1;i&gt;=a;i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Per(i,a,b) for(register int i=b;i&gt;=a;i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> eb emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (x).size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEN(x) (x).length()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(X) (X).begin(), (X).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MS0(X) memset((X), 0, sizeof((X)))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MS1(X) memset((X), -1, sizeof((X)))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MS(X,a) memset((X),a,sizeof(X))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CASET int ___T; scanf(<span class="meta-string">"%d"</span>, &amp;___T); for(register int cs=1;cs&lt;=___T;cs++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ind(x) scanf(<span class="meta-string">"%d"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inlf(x) scanf(<span class="meta-string">"%lf"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inll(x) scanf(<span class="meta-string">"%lld"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inllf(x) scanf(<span class="meta-string">"%llf"</span>,&amp;x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> outd(x) printf(<span class="meta-string">"%d\n"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> outf(x) printf(<span class="meta-string">"%f\n"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> outlld(x) printf(<span class="meta-string">"%lld\n"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> outLf(x) printf(<span class="meta-string">"%Lf\n"</span>,x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IO ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi=<span class="built_in">acos</span>(<span class="number">-1</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) (x&amp;(-x))</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">5e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> e=<span class="number">2.718281828459045</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Accepted 0</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">quick</span><span class="params">(ll a,ll b,ll m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>)</span><br><span class="line">            ans=(a*ans)%m;</span><br><span class="line">        a=(a*a)%m;</span><br><span class="line">        b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b?gcd(b,a%b):a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">dp[i]=dp[j]+(sum[i]-sum[j])^2+M  (j&lt;i)</span></span><br><span class="line"><span class="comment">dp[i]=dp[k]+(sum[i]-sum[k])^2+M</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">dp[j]+(sum[i]-sum[j])^2+M&lt;dp[k]+(sum[i]-sum[k])^2+M</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">dp[j]-2*sum[i]*sum[j]+sum[j]^2&lt;dp[k]-2*sum[i]*sum[k]+sum[k]^2</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">dp[j]+sum[j]^2-dp[k]+sum[k]^2&lt;2*sum[i]*(sum[j]-sum[k])</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">(dp[j]+sum[j]^2-dp[k]+sum[k]^2)/(sum[j]-sum[k])&lt;2*sum[i]</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">F[x]=dp[x]+sum[x]^2</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">(F[j]-F[k])/(sum[j]-sum[k])&lt;2*sum[i]</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line">ll a[maxn];</span><br><span class="line">ll dp[maxn];</span><br><span class="line">ll sum[maxn];</span><br><span class="line"></span><br><span class="line"><span class="comment">//点i和点j的斜率的分子</span></span><br><span class="line"><span class="function">ll <span class="title">getUp</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (dp[i]+sum[i]*sum[i])-(dp[j]+sum[j]*sum[j]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//点i和点j的斜率的分母</span></span><br><span class="line"><span class="function">ll <span class="title">getDown</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>*(sum[i]-sum[j]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//点i从点j转移时的方程</span></span><br><span class="line"><span class="function">ll <span class="title">getdp</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> dp[j]+(sum[i]-sum[j])*(sum[i]-sum[j])+m;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> q[maxn];</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    IO</span><br><span class="line">    <span class="keyword">int</span> head,tail;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m)</span><br><span class="line">    &#123;</span><br><span class="line">        head=tail=<span class="number">0</span>;</span><br><span class="line">        Rep(i,<span class="number">1</span>,n) <span class="built_in">cin</span>&gt;&gt;a[i],sum[i]=sum[i<span class="number">-1</span>]+a[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//sum[i]单增，从队首弹出小于sum[i]的斜率</span></span><br><span class="line">            <span class="comment">//注意这个while里面一定不能取等</span></span><br><span class="line">            <span class="keyword">while</span>(head&lt;tail&amp;&amp;getUp(q[head+<span class="number">1</span>],q[head])&lt;getDown(q[head+<span class="number">1</span>],q[head])*(sum[i]))</span><br><span class="line">                head++;</span><br><span class="line">            dp[i]=getdp(i,q[head]);</span><br><span class="line">            <span class="comment">//塞入点i维护整个图的下凸性，弹出队首若干个点</span></span><br><span class="line">            <span class="comment">//注意这个while里面一定要取等</span></span><br><span class="line">            <span class="keyword">while</span>(head&lt;tail&amp;&amp;getUp(i,q[tail])*getDown(q[tail],q[tail<span class="number">-1</span>])&lt;=getUp(q[tail],q[tail<span class="number">-1</span>])*getDown(i,q[tail]))</span><br><span class="line">                tail--;</span><br><span class="line">            q[++tail]=i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;dp[n]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Accepted;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>不要问我为什么知道那两个while里面不等号的取等情况，我也不清楚为什么…但是Debug了我好久QAQ</p>
-<h3 id="相关的练习题："><a href="#相关的练习题：" class="headerlink" title="相关的练习题："></a>相关的练习题：</h3><p><a href="https://ac.nowcoder.com/acm/contest/890/J" target="_blank" rel="noopener">2019牛客暑期多校训练营（第十场）J题</a></p>
-<p>这题会告诉你为什么第二个while里面要取等QAQ</p>
-<p>这题可以用二维斜率dp或者wqs二分，据说knuth优化也可以做，码住以后填坑</p>
-<p><a href="https://www.luogu.com.cn/problem/P5308" target="_blank" rel="noopener">P5308 [COCI2019] Quiz</a></p>
-<p>这题会告诉你第一个while里面为什么不能取等号QAQ</p>
-<p>一个wqs二分套斜率dp的题</p>
-<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1300" target="_blank" rel="noopener">HDU 1300 Pearls</a></p>
-<p>普通的斜率dp模板题</p>
-<p><a href="https://zodiacnumblzw.github.io/2020/02/05/HDU%201300%20Pearls/">题解在这</a></p>
-<p>未完待填坑…有好的题目我会补在这里</p>
-<p>如果文章中有问题，欢迎各位指出，也可以加博主QQ:906203494我们一起交流</p>
-
-    
-
-    
-    <div class="page-reward">
-      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
-        <div class="tooltip tooltip-east">
-          <span class="tooltip-item">
-            赏
-          </span>
-          <span class="tooltip-content">
-            <span class="tooltip-text">
-              <span class="tooltip-inner">
-                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
-                    class="icon icon-quo-right"></i></p>
-                <div class="reward-box">
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/img/alipay.jpg">
-                    <span class="reward-type">支付宝</span>
-                  </div>
-                  
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/img/weixin.jpg">
-                    <span class="reward-type">微信</span>
-                  </div>
-                  
-                </div>
-              </span>
-            </span>
-          </span>
-        </div>
-      </a>
-    </div>
-    
-
-    
-    <div class="declare"> 
-      <ul class="post-copyright">
-        <li>
-          <strong>本文作者：</strong>
-          Sakuya
-        </li>
-        <li>
-          <strong>本文链接：</strong>
-          <a href="http://ZodiacNumblzw.github.io/2020/02/03/斜率dp学习笔记/" title="斜率dp学习笔记" target="_blank">http://ZodiacNumblzw.github.io/2020/02/03/斜率dp学习笔记/</a>
-        </li>
-        
-        <li>
-          <strong>版权声明： </strong>
+        <div class="article-info info-on-right">
           
-          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
-        </li>
-        
-      </ul>
-    </div>
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分治</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">斜率优化</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">归并排序</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">CDQ分治</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">树状数组</a>
         		</li>
       		
 		</ul>
 	</div>
 
-    
+          
 
-    
-
-    
-    
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a> -->
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zodiacnumblzw.github.io/2020/02/03/%E6%96%9C%E7%8E%87dp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码"> -->
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-    
-    <div class="clearfix"></div>
-  </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-<nav id="article-nav">
-  
-    <a href="/2020/02/04/wqs%E4%BA%8C%E5%88%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          wqs二分学习笔记
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/01/17/%E4%B8%BB%E5%B8%AD%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">主席树学习笔记</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
           </div>
@@ -537,9 +311,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
