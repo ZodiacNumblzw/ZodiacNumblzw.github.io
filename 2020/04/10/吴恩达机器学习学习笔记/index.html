@@ -18,7 +18,7 @@
 <meta property="og:description" content="吴恩达 机器学习入门 学习笔记2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他数据所对应的正确答案。一般包含">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-10T11:50:59.446Z">
-<meta property="article:modified_time" content="2020-04-10T11:53:53.893Z">
+<meta property="article:modified_time" content="2020-04-10T11:58:45.016Z">
 <meta property="article:author" content="Sakuya">
 <meta name="twitter:card" content="summary">
   
@@ -299,7 +299,7 @@
 <h4 id="学习率-alpha"><a href="#学习率-alpha" class="headerlink" title="学习率$\alpha$"></a>学习率$\alpha$</h4><p>如果学习率太大了可能会选取到使代价函数变大的一步，学习率太小了可能会使收敛到最优解非常慢，一般用0.001,0.003,0.01,0.03,0.1….大约每3倍取一个值尝试一下，找到最优的学习率的范围</p>
 <p><strong>个人总结</strong>：</p>
 <p>感觉学习率更像是模拟退火算法中的步长，选取固定的学习率不一定太好，我觉得可以借鉴模拟退火中的思路，先把学习率设为一个较大值，随着程序的运行越来越小，这样肯定可以收敛到最优值，还可以选择学习率小于某一个值的时候退出程序</p>
-<h4 id="特征与多项式回归"><a href="#特征与多项式回归" class="headerlink" title="特征与多项式回归"></a>特征与多项式回归</h4><p>可以考虑非线性回归，比如将之前的回归函数改为<br>$$<br>h_{\theta}(x)=\theta_0{x_0}+\theta_1{x}<em>1+\theta</em>{2}\sqrt{x_1} \ \ \ 或\ \ \ h_{\theta}(x)=\theta_0{x_0}+\theta_1{x}<em>1+\theta</em>{2}x_1^3<br>$$<br>之类的去拟合，这个时候特征缩放就会很重要了</p>
+<h4 id="特征与多项式回归"><a href="#特征与多项式回归" class="headerlink" title="特征与多项式回归"></a>特征与多项式回归</h4><p>可以考虑非线性回归，比如将之前的回归函数改为<br>$$<br>h_{\theta}(x)=\theta_0{x_0}+\theta_1{x_1}+\theta_{2}\sqrt{x_1} \ \ \ 或\ \ \ h_{\theta}(x)=\theta_0{x_0}+\theta_1{x_1}+\theta_{2}x_1^3<br>$$<br>之类的去拟合，这个时候特征缩放就会很重要了</p>
 <h4 id="正规方程"><a href="#正规方程" class="headerlink" title="正规方程"></a>正规方程</h4><p>就是之前提到过的线性回归的公式的多元版本，可以O(1)得到$\theta$向量的最优解，不用迭代求解</p>
 <p>设数据集为矩阵$X$（每一行是一组数据），结果集为列向量$y$<br>$$<br>\theta=(X^TX)^{-1}X^Ty<br>$$<br>这样求得的列向量$\theta$即为最佳的系数</p>
 <p>Octave代码：</p>
@@ -657,7 +657,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">平衡树</a>
+                <a href="javascript:void(0)" class="js-tag color4">主席树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -673,7 +673,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">主席树</a>
+                <a href="javascript:void(0)" class="js-tag color4">平衡树</a>
               </li>
              
               <li class="article-tag-list-item">
