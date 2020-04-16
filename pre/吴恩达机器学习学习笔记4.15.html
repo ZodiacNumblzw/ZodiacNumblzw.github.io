@@ -13,14 +13,16 @@
   <meta name="description" content="吴恩达 机器学习入门 学习笔记2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他数据所对应的正确答案。一般包含">
 <meta property="og:type" content="website">
 <meta property="og:title" content="SakuyaのBlog">
-<meta property="og:url" content="http://zodiacnumblzw.github.io/pre/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+<meta property="og:url" content="http://zodiacnumblzw.github.io/pre/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04.15.html">
 <meta property="og:site_name" content="SakuyaのBlog">
 <meta property="og:description" content="吴恩达 机器学习入门 学习笔记2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他数据所对应的正确答案。一般包含">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-14T04:10:54.947Z">
-<meta property="article:modified_time" content="2020-04-10T11:58:45.016Z">
+<meta property="og:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Sigmoid.png">
+<meta property="article:published_time" content="2020-04-16T04:24:58.369Z">
+<meta property="article:modified_time" content="2020-04-14T04:16:07.707Z">
 <meta property="article:author" content="Sakuya">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Sigmoid.png">
   
     <link rel="alternative" href="/atom.xml" title="SakuyaのBlog" type="application/atom+xml">
   
@@ -264,6 +266,20 @@
 <p>这种情况很少发生，如果发生注意检查数据集是否有问题</p>
 <p>原因1：数据集是否有冗余（重复或可以互相得到）的特征值</p>
 <p>原因2：数据量m少于属性个数n，导致数据集不满秩（删除属性或<strong>正规化</strong>）</p>
+<p>4.12-4.13</p>
+<h3 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h3><p>主要介绍了Octave的一些语法，下面挑一些介绍一哈</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line">help eye	%查询eye的用法 甚至可以help help查看help的用法</span><br><span class="line"></span><br><span class="line">eye(4)	%生成4*4的单位方阵</span><br><span class="line">ones(3,4)	%生成3*4的全1矩阵</span><br><span class="line">zeros(3,4)	%生成3*4的全0矩阵</span><br><span class="line"></span><br><span class="line">rand(3,4)	%生成3*4的随机矩阵，随机数在[0,1]之间</span><br><span class="line">randn(3,4)	%生成3*4的随机矩阵，随机数符合高斯分布，均值为0，方差为1</span><br><span class="line"></span><br><span class="line">hist(A,1000)	%绘制有1000个柱形的矩阵A的直方图</span><br><span class="line"></span><br><span class="line">pwd	%当前路径</span><br><span class="line">% cd ls之类的之类和Unix类似</span><br><span class="line"></span><br><span class="line">load mydata.txt	%在当前目录读取mydata.txt文件中的数据到一个名为mydata的矩阵中</span><br><span class="line">%load(&#39;mydata.txt&#39;)也可以</span><br><span class="line">save mydata.mat A	%将A中数据以二进制的形式存入当前目录的mydata.mat文件</span><br><span class="line">save mydata.txt A -ascii	%将A中数据以文本的形式存入当前目录的mydata.mat文件</span><br><span class="line"></span><br><span class="line">who	%当前哪些变量在内存中</span><br><span class="line">whos	%变量在内存中的值</span><br><span class="line">clear	%清除内存中全部变量</span><br><span class="line">clear mydata	%清除mydate中的值</span><br><span class="line"></span><br><span class="line">max(A)	%取A矩阵中每一列的最大值</span><br><span class="line">[A:B]	%将B追加在A的右边</span><br><span class="line">[A;B]	%将B追加在A的下边</span><br><span class="line">A&#39;	%A的转置矩阵</span><br><span class="line">pinv(A)	%A的伪逆</span><br><span class="line">inv(A)	%A的逆</span><br><span class="line">size(A)	%A的大小</span><br><span class="line">size(A,1)	%列大小</span><br><span class="line">size(A,2)	%行大小</span><br><span class="line">length(A)	%A长宽的最大值（一般用于求向量的长度）</span><br><span class="line"></span><br><span class="line">%&#39;.&#39;+运算符一般用于对元素的运算，如果不带&#39;.&#39;一般是矩阵运算</span><br><span class="line">A.^2	%对A每个元素平方</span><br><span class="line">A.*B	%A,B对应的每个元素相乘</span><br><span class="line">[r,c]&#x3D;find(A&gt;&#x3D;7)	%找到A中&gt;&#x3D;7的元素的位置，返回给两个向量</span><br><span class="line">max(A,B)	%生成一个和A,B相同大小的矩阵，每个位置处的值为A,B对应位置的最大值</span><br><span class="line">max(A,[],1)	%返回一个行向量，代表每一行的最大值</span><br><span class="line">max(A,[],2)	%返回一个列向量，代表每一列的最大值</span><br><span class="line">flipub(A)	%生成A的垂直翻转矩阵</span><br><span class="line">fliplr(A)	%生成A的水平翻转矩阵</span><br><span class="line">rot90(A)	%生成A旋转90度后的矩阵</span><br><span class="line"></span><br><span class="line">t&#x3D;[0:0.01:0.98];	%生成定义域</span><br><span class="line">y1&#x3D;sin(2*pi*4*t);	%生成定义域上的每个点</span><br><span class="line">y2&#x3D;cos(2*pi*4*4);</span><br><span class="line">plot(t,y1);	%绘制y1</span><br><span class="line">hold on	%在上图的基础上继续绘制</span><br><span class="line">plot(t,y2，‘r&#39;);	%用红色继续绘制y2</span><br><span class="line">xlable(&#39;time&#39;);	%给x轴添加&#39;time&#39;标签</span><br><span class="line">ylable(&#39;value&#39;);	%给y轴添加&#39;value&#39;标签</span><br><span class="line">legend(&#39;sin&#39;,&#39;cos&#39;)	%标记两条曲线</span><br><span class="line">title(&#39;my plot&#39;)	%添加标题</span><br><span class="line">print -dpng &#39;myPlot.png&#39;	%保存图片为png格式到当前路径</span><br><span class="line">close	%关闭图形</span><br><span class="line"></span><br><span class="line">%生成两个框框分别绘图</span><br><span class="line">figure(1); plot(t,y1);</span><br><span class="line">figure(2); plot(t,y2);</span><br><span class="line"></span><br><span class="line">subplot(1,2,1)	%分成1*2的两个子图，使用第一个子图</span><br><span class="line">plot(t,y1);</span><br><span class="line">subplot(1,2,2)	%使用第二个子图</span><br><span class="line">plot(t,y2);</span><br><span class="line">axis([0.5,1,-1,1])	%调整x,y轴的范围</span><br><span class="line">clf	%清除图像</span><br><span class="line"></span><br><span class="line">imagesc(A)	%生成A的色域图</span><br><span class="line">imagesc(A),colorbar,colormap gray	%生成A的灰度图和颜色条</span><br><span class="line"></span><br><span class="line">%for循环</span><br><span class="line">for i&#x3D;[1:10],</span><br><span class="line">	A(i)&#x3D;3^i;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">%while循环</span><br><span class="line">while i&gt;&#x3D;5,</span><br><span class="line">	v(1)&#x3D;100;</span><br><span class="line">	i&#x3D;i+1;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">%if语句</span><br><span class="line">if i&#x3D;&#x3D;6,</span><br><span class="line">	break;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">disp(&#39;string’)	%string里面不能带中文</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">%函数定义（只能在当前目录才能被调用）</span><br><span class="line">function y&#x3D;squareThisNumber(x)</span><br><span class="line">y&#x3D;x^2;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>计算第二章中的代价函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function J&#x3D;costFunctionJ(X,y,theta)</span><br><span class="line">m&#x3D;size(X,1);</span><br><span class="line">predictions&#x3D;X*theta;</span><br><span class="line">sqrErrors&#x3D;predictions-y;</span><br><span class="line">J&#x3D;1&#x2F;(2*m)*sum(sqrErrors);</span><br></pre></td></tr></table></figure>
+
+<p>很多语法和MATLAB很相似，就不再赘述了，需要的时候再去查阅</p>
+<p>附上<a href="https://octave.org/doc/v5.2.0/" target="_blank" rel="noopener">官方文档</a></p>
+<h4 id="向量化"><a href="#向量化" class="headerlink" title="向量化"></a>向量化</h4><p>Octave库中的矩阵乘法往往会比我们手写的矩阵乘法快的很多（可能小于$O(n^3)$），因此我们在想要使用for循环的时候应该尽量想办法把他转化为矩阵的乘法，这样可以有效的提高程序的效率</p>
+<h3 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h3><p>主要介绍了监督学习的另一类问题，分类算法</p>
+<p>引入<strong>Sigmoid函数</strong>，也被称为<strong>Logistic函数</strong><br>$$<br>S(x)=\frac{1}{1+e^{-x}}<br>$$<br>这是一个关于$(0,\frac{1}{2})$对称，且值域是$(0,1)$<br>$$<br>S’(x)=\frac{e^{-x}}{(1+e^{-x})^2}=S(x)(1-S(x))<br>$$<br><img src="/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Sigmoid.png" alt="Sigmoid"></p>
 
     
 
@@ -310,7 +326,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://ZodiacNumblzw.github.io/pre/吴恩达机器学习学习笔记.html" title="" target="_blank">http://ZodiacNumblzw.github.io/pre/吴恩达机器学习学习笔记.html</a>
+          <a href="http://ZodiacNumblzw.github.io/pre/吴恩达机器学习学习笔记4.15.html" title="" target="_blank">http://ZodiacNumblzw.github.io/pre/吴恩达机器学习学习笔记4.15.html</a>
         </li>
         
         <li>
@@ -377,7 +393,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zodiacnumblzw.github.io/pre/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zodiacnumblzw.github.io/pre/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04.15.html" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -567,6 +583,18 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ST表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tarjan</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LCA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">分治</a>
               </li>
              
@@ -583,27 +611,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ST表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tarjan</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LCA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">wqs二分</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">主席树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">平衡树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -616,6 +628,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">整除分块</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">平衡树</a>
               </li>
              
               <li class="article-tag-list-item">

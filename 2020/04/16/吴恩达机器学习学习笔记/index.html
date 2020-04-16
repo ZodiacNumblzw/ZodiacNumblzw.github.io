@@ -6,21 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://ZodiacNumblzw.github.io">
-  <title>Jensen不等式及其证明 | SakuyaのBlog</title>
+  <title>吴恩达机器学习学习笔记 | SakuyaのBlog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="高中数学竞赛回忆之Jensen不等式及其证明Jensen不等式是一个有关函数凹凸性的一个不等式，其形式主要为如下两种 (1)设函数$f(x)$在区间$I$上连续且为下凸（凸）函数，对$I$上任意n个点$x_1 \leq x_2\leq …\leq x_n$，恒有$$\frac{f(x_1)+f(x_2)+…+f(x_n)}{n}\geq f(\frac{x_1+x_2+…+x_n}{n})$$(2">
+  <meta name="description" content="吴恩达 机器学习入门 学习笔记2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他数据所对应的正确答案。一般包含">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jensen不等式及其证明">
-<meta property="og:url" content="http://zodiacnumblzw.github.io/2020/04/08/Jensen%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%8F%8A%E5%85%B6%E8%AF%81%E6%98%8E/index.html">
+<meta property="og:title" content="吴恩达机器学习学习笔记">
+<meta property="og:url" content="http://zodiacnumblzw.github.io/2020/04/16/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="SakuyaのBlog">
-<meta property="og:description" content="高中数学竞赛回忆之Jensen不等式及其证明Jensen不等式是一个有关函数凹凸性的一个不等式，其形式主要为如下两种 (1)设函数$f(x)$在区间$I$上连续且为下凸（凸）函数，对$I$上任意n个点$x_1 \leq x_2\leq …\leq x_n$，恒有$$\frac{f(x_1)+f(x_2)+…+f(x_n)}{n}\geq f(\frac{x_1+x_2+…+x_n}{n})$$(2">
+<meta property="og:description" content="吴恩达 机器学习入门 学习笔记2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他数据所对应的正确答案。一般包含">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-08T09:48:07.449Z">
-<meta property="article:modified_time" content="2020-04-08T09:47:47.070Z">
+<meta property="og:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Sigmoid.png">
+<meta property="article:published_time" content="2020-04-16T04:25:08.747Z">
+<meta property="article:modified_time" content="2020-04-16T04:24:15.088Z">
 <meta property="article:author" content="Sakuya">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Sigmoid.png">
   
     <link rel="alternative" href="/atom.xml" title="SakuyaのBlog" type="application/atom+xml">
   
@@ -204,14 +206,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Jensen不等式及其证明" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-吴恩达机器学习学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      Jensen不等式及其证明
+      吴恩达机器学习学习笔记
     </h1>
   
 
@@ -223,8 +225,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/04/08/Jensen%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%8F%8A%E5%85%B6%E8%AF%81%E6%98%8E/" class="archive-article-date">
-        <time datetime="2020-04-08T09:48:07.449Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
+<a href="/2020/04/16/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+        <time datetime="2020-04-16T04:25:08.747Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
 </a>
 
   
@@ -237,7 +239,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">893字</span>
+      <span class="post-count">3.3k字</span>
     </span>
   </span>
 
@@ -246,7 +248,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">4分</span>
+      <span class="post-count">12分</span>
     </span>
   </span>
 </div>
@@ -257,25 +259,88 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="高中数学竞赛回忆之Jensen不等式及其证明"><a href="#高中数学竞赛回忆之Jensen不等式及其证明" class="headerlink" title="高中数学竞赛回忆之Jensen不等式及其证明"></a>高中数学竞赛回忆之Jensen不等式及其证明</h1><p>Jensen不等式是一个有关函数凹凸性的一个不等式，其形式主要为如下两种</p>
-<p>(1)设函数$f(x)$在区间$I$上连续且为下凸（凸）函数，对$I$上任意n个点$x_1 \leq x_2\leq …\leq x_n$，恒有<br>$$<br>\frac{f(x_1)+f(x_2)+…+f(x_n)}{n}\geq f(\frac{x_1+x_2+…+x_n}{n})<br>$$<br>(2)设函数$f(x)$在区间$I$上连续且为上凸（凹）函数，对$I$上任意n个点$x_1 \leq x_2\leq …\leq x_n$，恒有<br>$$<br>\frac{f(x_1)+f(x_2)+…+f(x_n)}{n}\leq f(\frac{x_1+x_2+…+x_n}{n})<br>$$</p>
+    <h1 id="吴恩达-机器学习入门-学习笔记"><a href="#吴恩达-机器学习入门-学习笔记" class="headerlink" title="吴恩达 机器学习入门 学习笔记"></a>吴恩达 机器学习入门 学习笔记</h1><p>2020.4.7</p>
+<h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><blockquote>
+<p><strong>什么是机器学习？</strong></p>
+<p>计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率</p>
+</blockquote>
+<blockquote>
+<p><strong>什么是监督学习和无监督学习？</strong></p>
+<p><strong>监督学习</strong>：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他数据所对应的正确答案。一般包含算法预测和算法分类两种问题</p>
+<p><strong>无监督学习</strong>：我们给计算机的数据集中不包含每组数据的正确答案，需要计算机去发现数据中的某些关系，类型，或结构，可能是聚类问题，比如网页新闻的聚类，还有鸡尾酒会问题中的分离两种声音的算法</p>
+</blockquote>
 <a id="more"></a>
 
-<p>顺带一提，学术上普遍认为向上凸的函数被称为“凹函数”而不是“凸函数”，因为函数的凹凸性首先是从国外引进来的，而英文并不像中文一样具有汉字的象形，最开始定义函数的凹凸性的时候是定义函数上方的点集是“凹”的还是“凸”的，所以学术上的函数的凹凸性和我们最初的认识有点差别</p>
-<p>Jensen不等式还有一个加权形式，我们一般称之为<strong>加权Jensen</strong>不等式</p>
-<p>(1)设函数$f(x)$在区间$I$上连续且为下凸（凸）函数，对$I$上任意n个点$x_1 \leq x_2\leq …\leq x_n$，并对于任意n个正实数$p_1,p_2,…p_n,且p_1+p_2+…+p_n=1$恒有<br>$$<br>p_1f(x_1)+p_2f(x_2)+…+p_nf(x_n)\geq f(p_1x_1+p_2x_2+…+p_nx_n)<br>$$<br>(2)设函数$f(x)$在区间$I$上连续且为上凸（凹）函数，对$I$上任意n个点$x_1 \leq x_2\leq …\leq x_n$，并对于任意n个正实数$p_1,p_2,…p_n,且p_1+p_2+…+p_n=1$恒有<br>$$<br>p_1f(x_1)+p_2f(x_2)+…+p_nf(x_n)\leq f(p_1x_1+p_2x_2+…+p_nx_n)<br>$$</p>
-<h3 id="Jensen不等式的证明"><a href="#Jensen不等式的证明" class="headerlink" title="Jensen不等式的证明"></a>Jensen不等式的证明</h3><h4 id="方法1：反向数学归纳法"><a href="#方法1：反向数学归纳法" class="headerlink" title="方法1：反向数学归纳法"></a>方法1：反向数学归纳法</h4><p>不懂反向数归的童鞋建议移步<a href="https://wenku.baidu.com/view/88f132e8fc4ffe473268ab97.html" target="_blank" rel="noopener">反向数学归纳法</a>了解一下下</p>
-<p>下面直接开始证明，不妨设$f(x)$在区间$I$下凸，首先我们有<br>$$<br>\frac{f(x_1)+f(x_2)}{2}\geq f(\frac{x_1+x_2}{2})<br>$$<br>设$n=2^k$时我们有<br>$$<br>\frac{f(x_1)+f(x_2)+…+f(x_{2^k})}{2^k}\geq f(\frac{x_1+x_2+…+x_{2^k}}{2^k})<br>$$<br>对于$n=2^{k+1}$<br>$$<br>\frac{f(x_1)+f(x_2)+…+f(x_{2^{k+1}})}{2^{k+1}}\geq \frac{f(\frac{x_1+x_2}{2})+f(\frac{x_3+x_4}{2})+…+f(\frac{x_{2^{k+1}-1}+x_{2^{k+1}}}{2})}{2^k}\geq f(\frac{x_1+x_2+…+x_{2^{k+1}}}{2^{k+1}})<br>$$<br>于是存在无穷个n使得Jensen不等式成立</p>
-<p><strong>反向数学归纳：</strong></p>
-<p>我们已知：<br>$$<br>\frac{f(x_1)+f(x_2)+…+f(x_{n+1})}{n+1}\geq f(\frac{x_1+x_2+…+x_{n+1}}{n+1})<br>$$<br>令<br>$$<br>x_{n+1}=\frac{x_1+x_2+…+x_n}{n}<br>$$<br>我们得到如下式子<br>$$<br>\frac{f(x_1)+f(x_2)+…+f(\frac{x_1+x_2+…+x_n}{n})}{n+1}\geq f(\frac{x_1+x_2+…+\frac{x_1+x_2+…+x_n}{n}}{n+1})<br>$$</p>
-<p>$$<br>\Leftrightarrow \frac{f(x_1)+f(x_2)+…+f(x_n)}{n+1}\geq  \frac{n}{n+1}f(\frac{x_1+x_2+…+x_n}{n})<br>$$</p>
-<p>$$<br>\Leftrightarrow \frac{f(x_1)+f(x_2)+…+f(x_n)}{n}\geq f(\frac{x_1+x_2+…+x_n}{n})<br>$$</p>
-<p>​                                                                                                                  $Q.E.D$</p>
-<h3 id="加权Jensen不等式的证明"><a href="#加权Jensen不等式的证明" class="headerlink" title="加权Jensen不等式的证明"></a>加权Jensen不等式的证明</h3><p><strong>数学归纳法：</strong></p>
-<p>下面直接开始证明，不妨设$f(x)$在区间$I$下凸，首先我们有<br>$$<br>p_1f(x_1)+p_2f(x_2)\geq f(p_1x_1+p_2x_2) 且p_1+p_2=1<br>$$<br>设$n=k$时我们有<br>$$<br>p_1f(x_1)+p_2f(x_2)+…+p_kf(x_{k})\geq f(p_1x_1+p_2x_2+…+p_kx_{k})<br>$$<br>$n=k+1时$<br>$$<br>p_1f(x_1)+p_2f(x_2)+…+p_{k+1}f(x_{k+1})=p_{k+1}f(x_{k+1})+(1-p_{k+1})(\frac{p_1}{1-p_{k+1}}f(x_1)+(\frac{p_2}{1-p_{k+1}}f(x_2)+…+(\frac{p_1}{1-p_{k}}f(x_{k}))<br>$$</p>
-<p>$$<br>\geq p_{k+1}f(x_{k+1})+(1-p_{k+1})f(\frac{p_1}{1-p_{k+1}}x_1+\frac{p_2}{1-p_{k+1}}x_2+…+\frac{p_k}{1-p_{k+1}}x_{k})<br>$$</p>
-<p>运用$n=2$时的式子<br>$$<br>\geq f(p_1x_1+p_2x_2+…+p_{k+1}x_{k+1})<br>$$<br>​                                                                                                                           $Q.E.D$</p>
-<p>未完待续</p>
+
+
+<p>2020.4.8</p>
+<h3 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h3><p>第二章主要介绍了线性回归的算法——梯度下降算法</p>
+<blockquote>
+<p><strong>代价函数：</strong>线性回归中每个样例点到拟合方程的y的差值的平方和。</p>
+<p>我们的线性回归算法需要做到的就是去找到一条直线，去使得代价函数最小，此时是最优的线性回归方程</p>
+</blockquote>
+<p>对于线性回归<br>$$<br>h_{\theta}(x):y=\theta_1 x+\theta_0<br>$$<br>我们的代价函数可以表示为<br>$$<br>J(\theta_0,\theta_1)=\frac{1}{2m}\sum_{i=1}^{m}{(h_{\theta}(x_i)-y_i)^2}<br>$$<br>其中$x_1…x_m,y_1…y_m$为算例集</p>
+<p>由简单的计算几何知识可以直到代价函数$J$一定是一个单峰函数，因此可以利用梯度下降算法。</p>
+<p>每次选取下降最大的位置走，直到走到最低谷，利用到了数学分析中的偏导数</p>
+<p><strong>个人总结：</strong></p>
+<p>其实我觉得这种算法和爬山算法类似容易陷入局部最优解，表现能力可能不如模拟退火，不知道后面的课程会不会涉及到相关的知识</p>
+<p>其实线性回归方程在高中的时候我们就接触过相关的公式，不过这里是利用算法将答案搜索出来，也可以用拉格朗日乘数法啊总之方法很多（甚至我觉得用二分都能搞一下）</p>
+<p>不过梯度下降算法的思路还是很不错的，同时会暴露出局部最优解的问题，从而会产生出一些解决陷入局部最优解的方法比如tabu search禁忌搜索算法，期待后续课程</p>
+<h3 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h3><p>这一章节主要介绍了线性代数的基本知识，有关矩阵的一些运算，比较基础，还简单介绍了如何用矩阵乘法来简化线性回归的运算</p>
+<p>2020.4.10</p>
+<h3 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h3><p>主要介绍的是多元线性回归和多元的梯度下降算法</p>
+<p>我们假设线性回归方程为，并不妨设$x_0=1$（因为可以同时除以若干倍使得其为1）<br>$$<br>h_{\theta}(x)=\theta_0{x_0}+\theta_1{x_1}+\theta_{2}{x_2}+…+\theta_{n}{x_n}=\theta^Tx<br>$$</p>
+<p>代价函数为</p>
+<p>$$<br>J(\theta_0,\theta_1,…,\theta_n)=\frac{1}{2m}\sum_{i=1}^m (h_\theta(x^{(i)})-y^{(i)})^2<br>$$</p>
+<h4 id="多元梯度下降算法"><a href="#多元梯度下降算法" class="headerlink" title="多元梯度下降算法"></a>多元梯度下降算法</h4><p>对代价函数中的每个$\theta$求偏导 可以得到<br>$$<br>\theta_j :=\theta_j-\alpha \frac{1}{m}\sum_{i=1}^m (h_\theta(x^{(i)})-y^{(i)})x_j^{(i)} \ \ \ \ \ \ \ (1\leq j\leq m)<br>$$</p>
+<h4 id="梯度下降算法性能—-特征缩放"><a href="#梯度下降算法性能—-特征缩放" class="headerlink" title="梯度下降算法性能—-特征缩放"></a>梯度下降算法性能—-特征缩放</h4><p>如果多个特征值的范围比较接近的话，用梯度下降算法会更快的收敛于正确答案，否则会不停的波动，很长时间以后才能收敛到最佳答案，<strong>我猜想可能是因为一方面和梯度向量难以指向最优解的方向，另一方面和学习率$\alpha$对每个特征值都不变有关</strong>。</p>
+<h5 id="解决方法1：根据特征值的范围对特征值进行缩放"><a href="#解决方法1：根据特征值的范围对特征值进行缩放" class="headerlink" title="解决方法1：根据特征值的范围对特征值进行缩放"></a>解决方法1：根据特征值的范围对特征值进行缩放</h5><p>如果特征值的范围不接近的话，代价函数的每一个凹面的截面的“椭圆”离心率会越大，<strong>放缩</strong>类似于几何学里面的<strong>仿射变换</strong>，可以将一个很椭的凹面仿射成一个比较圆的凹面，这样可以使梯度下降法的速度更快。</p>
+<p>一般来说对于[-1,1]，[-3,3]或[-1/3,1/3]范围内都是比较接近的（吴恩达的经验）</p>
+<h5 id="解决方法2：均值归一化"><a href="#解决方法2：均值归一化" class="headerlink" title="解决方法2：均值归一化"></a>解决方法2：均值归一化</h5><p>特征值的范围可能很不对称比如[0,1000]，我们可以考虑特征值为(原特征值-500)/500，来使特征值的范围在[-1,1]左右</p>
+<p>特征缩放不需要太准确，目的是使收敛于答案的速度更快</p>
+<h4 id="学习率-alpha"><a href="#学习率-alpha" class="headerlink" title="学习率$\alpha$"></a>学习率$\alpha$</h4><p>如果学习率太大了可能会选取到使代价函数变大的一步，学习率太小了可能会使收敛到最优解非常慢，一般用0.001,0.003,0.01,0.03,0.1….大约每3倍取一个值尝试一下，找到最优的学习率的范围</p>
+<p><strong>个人总结</strong>：</p>
+<p>感觉学习率更像是模拟退火算法中的步长，选取固定的学习率不一定太好，我觉得可以借鉴模拟退火中的思路，先把学习率设为一个较大值，随着程序的运行越来越小，这样肯定可以收敛到最优值，还可以选择学习率小于某一个值的时候退出程序</p>
+<h4 id="特征与多项式回归"><a href="#特征与多项式回归" class="headerlink" title="特征与多项式回归"></a>特征与多项式回归</h4><p>可以考虑非线性回归，比如将之前的回归函数改为<br>$$<br>h_{\theta}(x)=\theta_0{x_0}+\theta_1{x_1}+\theta_{2}\sqrt{x_1} \ \ \ 或\ \ \ h_{\theta}(x)=\theta_0{x_0}+\theta_1{x_1}+\theta_{2}x_1^3<br>$$<br>之类的去拟合，这个时候特征缩放就会很重要了</p>
+<h4 id="正规方程"><a href="#正规方程" class="headerlink" title="正规方程"></a>正规方程</h4><p>就是之前提到过的线性回归的公式的多元版本，可以O(1)得到$\theta$向量的最优解，不用迭代求解</p>
+<p>设数据集为矩阵$X$（每一行是一组数据），结果集为列向量$y$<br>$$<br>\theta=(X^TX)^{-1}X^Ty<br>$$<br>这样求得的列向量$\theta$即为最佳的系数</p>
+<p>Octave代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pinv(X&#39;*X)*X&#39;*y</span><br></pre></td></tr></table></figure>
+
+<p>证明目前不大会，据牛逼网友说要用到矩阵论的结论，<strong>西瓜书</strong>上面有</p>
+<p><strong>正规方程的缺点：</strong></p>
+<p>在数据量极大的情况下求$(X^TX)^{-1}$会非常耗时间，是$O(n^3)$复杂度</p>
+<h5 id="当-X-TX-不可逆时"><a href="#当-X-TX-不可逆时" class="headerlink" title="当$(X^TX)$不可逆时"></a>当$(X^TX)$不可逆时</h5><p>在Octave中使用pinv()  （伪逆矩阵）可以得到正确的答案但是inv()不行</p>
+<p>这种情况很少发生，如果发生注意检查数据集是否有问题</p>
+<p>原因1：数据集是否有冗余（重复或可以互相得到）的特征值</p>
+<p>原因2：数据量m少于属性个数n，导致数据集不满秩（删除属性或<strong>正规化</strong>）</p>
+<p>4.12-4.13</p>
+<h3 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h3><p>主要介绍了Octave的一些语法，下面挑一些介绍一哈</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line">help eye	%查询eye的用法 甚至可以help help查看help的用法</span><br><span class="line"></span><br><span class="line">eye(4)	%生成4*4的单位方阵</span><br><span class="line">ones(3,4)	%生成3*4的全1矩阵</span><br><span class="line">zeros(3,4)	%生成3*4的全0矩阵</span><br><span class="line"></span><br><span class="line">rand(3,4)	%生成3*4的随机矩阵，随机数在[0,1]之间</span><br><span class="line">randn(3,4)	%生成3*4的随机矩阵，随机数符合高斯分布，均值为0，方差为1</span><br><span class="line"></span><br><span class="line">hist(A,1000)	%绘制有1000个柱形的矩阵A的直方图</span><br><span class="line"></span><br><span class="line">pwd	%当前路径</span><br><span class="line">% cd ls之类的之类和Unix类似</span><br><span class="line"></span><br><span class="line">load mydata.txt	%在当前目录读取mydata.txt文件中的数据到一个名为mydata的矩阵中</span><br><span class="line">%load(&#39;mydata.txt&#39;)也可以</span><br><span class="line">save mydata.mat A	%将A中数据以二进制的形式存入当前目录的mydata.mat文件</span><br><span class="line">save mydata.txt A -ascii	%将A中数据以文本的形式存入当前目录的mydata.mat文件</span><br><span class="line"></span><br><span class="line">who	%当前哪些变量在内存中</span><br><span class="line">whos	%变量在内存中的值</span><br><span class="line">clear	%清除内存中全部变量</span><br><span class="line">clear mydata	%清除mydate中的值</span><br><span class="line"></span><br><span class="line">max(A)	%取A矩阵中每一列的最大值</span><br><span class="line">[A:B]	%将B追加在A的右边</span><br><span class="line">[A;B]	%将B追加在A的下边</span><br><span class="line">A&#39;	%A的转置矩阵</span><br><span class="line">pinv(A)	%A的伪逆</span><br><span class="line">inv(A)	%A的逆</span><br><span class="line">size(A)	%A的大小</span><br><span class="line">size(A,1)	%列大小</span><br><span class="line">size(A,2)	%行大小</span><br><span class="line">length(A)	%A长宽的最大值（一般用于求向量的长度）</span><br><span class="line"></span><br><span class="line">%&#39;.&#39;+运算符一般用于对元素的运算，如果不带&#39;.&#39;一般是矩阵运算</span><br><span class="line">A.^2	%对A每个元素平方</span><br><span class="line">A.*B	%A,B对应的每个元素相乘</span><br><span class="line">[r,c]&#x3D;find(A&gt;&#x3D;7)	%找到A中&gt;&#x3D;7的元素的位置，返回给两个向量</span><br><span class="line">max(A,B)	%生成一个和A,B相同大小的矩阵，每个位置处的值为A,B对应位置的最大值</span><br><span class="line">max(A,[],1)	%返回一个行向量，代表每一行的最大值</span><br><span class="line">max(A,[],2)	%返回一个列向量，代表每一列的最大值</span><br><span class="line">flipub(A)	%生成A的垂直翻转矩阵</span><br><span class="line">fliplr(A)	%生成A的水平翻转矩阵</span><br><span class="line">rot90(A)	%生成A旋转90度后的矩阵</span><br><span class="line"></span><br><span class="line">t&#x3D;[0:0.01:0.98];	%生成定义域</span><br><span class="line">y1&#x3D;sin(2*pi*4*t);	%生成定义域上的每个点</span><br><span class="line">y2&#x3D;cos(2*pi*4*4);</span><br><span class="line">plot(t,y1);	%绘制y1</span><br><span class="line">hold on	%在上图的基础上继续绘制</span><br><span class="line">plot(t,y2，‘r&#39;);	%用红色继续绘制y2</span><br><span class="line">xlable(&#39;time&#39;);	%给x轴添加&#39;time&#39;标签</span><br><span class="line">ylable(&#39;value&#39;);	%给y轴添加&#39;value&#39;标签</span><br><span class="line">legend(&#39;sin&#39;,&#39;cos&#39;)	%标记两条曲线</span><br><span class="line">title(&#39;my plot&#39;)	%添加标题</span><br><span class="line">print -dpng &#39;myPlot.png&#39;	%保存图片为png格式到当前路径</span><br><span class="line">close	%关闭图形</span><br><span class="line"></span><br><span class="line">%生成两个框框分别绘图</span><br><span class="line">figure(1); plot(t,y1);</span><br><span class="line">figure(2); plot(t,y2);</span><br><span class="line"></span><br><span class="line">subplot(1,2,1)	%分成1*2的两个子图，使用第一个子图</span><br><span class="line">plot(t,y1);</span><br><span class="line">subplot(1,2,2)	%使用第二个子图</span><br><span class="line">plot(t,y2);</span><br><span class="line">axis([0.5,1,-1,1])	%调整x,y轴的范围</span><br><span class="line">clf	%清除图像</span><br><span class="line"></span><br><span class="line">imagesc(A)	%生成A的色域图</span><br><span class="line">imagesc(A),colorbar,colormap gray	%生成A的灰度图和颜色条</span><br><span class="line"></span><br><span class="line">%for循环</span><br><span class="line">for i&#x3D;[1:10],</span><br><span class="line">	A(i)&#x3D;3^i;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">%while循环</span><br><span class="line">while i&gt;&#x3D;5,</span><br><span class="line">	v(1)&#x3D;100;</span><br><span class="line">	i&#x3D;i+1;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">%if语句</span><br><span class="line">if i&#x3D;&#x3D;6,</span><br><span class="line">	break;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">disp(&#39;string’)	%string里面不能带中文</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">%函数定义（只能在当前目录才能被调用）</span><br><span class="line">function y&#x3D;squareThisNumber(x)</span><br><span class="line">y&#x3D;x^2;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>计算第二章中的代价函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function J&#x3D;costFunctionJ(X,y,theta)</span><br><span class="line">m&#x3D;size(X,1);</span><br><span class="line">predictions&#x3D;X*theta;</span><br><span class="line">sqrErrors&#x3D;predictions-y;</span><br><span class="line">J&#x3D;1&#x2F;(2*m)*sum(sqrErrors);</span><br></pre></td></tr></table></figure>
+
+<p>很多语法和MATLAB很相似，就不再赘述了，需要的时候再去查阅</p>
+<p>附上<a href="https://octave.org/doc/v5.2.0/" target="_blank" rel="noopener">官方文档</a></p>
+<h4 id="向量化"><a href="#向量化" class="headerlink" title="向量化"></a>向量化</h4><p>Octave库中的矩阵乘法往往会比我们手写的矩阵乘法快的很多（可能小于$O(n^3)$），因此我们在想要使用for循环的时候应该尽量想办法把他转化为矩阵的乘法，这样可以有效的提高程序的效率</p>
+<p>4.14-4.15</p>
+<h3 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h3><p>主要介绍了监督学习的另一类问题，分类算法</p>
+<p>引入<strong>Sigmoid函数</strong>，也被称为<strong>Logistic函数</strong><br>$$<br>S(x)=\frac{1}{1+e^{-x}}<br>$$<br>这是一个关于$(0,\frac{1}{2})$对称，且值域是$(0,1)$<br>$$<br>S’(x)=\frac{e^{-x}}{(1+e^{-x})^2}=S(x)(1-S(x))<br>$$<br><img src="/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Sigmoid.png" alt="Sigmoid"></p>
+<h5 id="Logistic回归"><a href="#Logistic回归" class="headerlink" title="Logistic回归"></a>Logistic回归</h5><p>利用$h_{\theta}(X)=\frac{1}{1+e^{\theta^TX}}$去拟合数据集</p>
+<p>其中$\theta$是我们需要调整的系数，$X$是每一组数据集，$h_{\theta}$最后的结果在$(0,1)$之间，并且指代的是此时y为1的概率。</p>
+<p>我们可以假设$h_{\theta}(X)$大于等于0.5时$y$取1，否则取0，此时我们还需要设定一个代价函数$J(\theta)$去代表$\theta$时的代价<br>$$<br>J(\theta)=yln(h_{\theta}(X))+(1-y)ln(1-h_{\theta}(X))<br>$$</p>
+<p>为什么要用<strong>Sigmoid函数</strong>呢？吴老师说根据极大似然估计得出的函数</p>
+<p>并且还有一个很重要的性质就是$J(\theta)$关于$\theta_i$的偏导数和之前的线性回归中的对应的偏导数形式完全一样，都是<br>$$<br>\alpha \frac{1}{m}\sum_{j=1}^{m}(h_{\theta}(X^{(i)})-y)x_j^{(i)}<br>$$<br>因此可以得到梯度下降算法的解法</p>
+<p>除了梯度下降算法之外，Octave内置有fminunc函数可以自动进行Logistic回归，并且效率极高，不用选择学习率$\alpha$</p>
+<p>解决逻辑回归的算法还有</p>
+<p><strong>Conjugate gradient</strong></p>
+<p><strong>BFGS</strong></p>
+<p><strong>L-BFGS</strong></p>
+<p>之后系统的学习一下</p>
+<p>如果需要解决分成多类的问题，假设我们要分为1,2,3类，先把第一类的y设为1，第二、三类的y的值设为0，可以得到一个决策边界，再把第二类的y值设为1，另外两类中的y设为0，得到第二个决策边界，最后把第三类的y设为1，另外两类设为0，得到第三个决策边界，最后把我们要算的数据集分别放入三个决策边界去求$h_{\theta}(X)$，返回概率最大的那个决策边界的情形时y设置为1的那个类</p>
 
     
 
@@ -322,7 +387,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://ZodiacNumblzw.github.io/2020/04/08/Jensen不等式及其证明/" title="Jensen不等式及其证明" target="_blank">http://ZodiacNumblzw.github.io/2020/04/08/Jensen不等式及其证明/</a>
+          <a href="http://ZodiacNumblzw.github.io/2020/04/16/吴恩达机器学习学习笔记/" title="吴恩达机器学习学习笔记" target="_blank">http://ZodiacNumblzw.github.io/2020/04/16/吴恩达机器学习学习笔记/</a>
         </li>
         
         <li>
@@ -389,7 +454,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zodiacnumblzw.github.io/2020/04/08/Jensen%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%8F%8A%E5%85%B6%E8%AF%81%E6%98%8E/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zodiacnumblzw.github.io/2020/04/16/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -404,18 +469,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/04/13/Min_25%E7%AD%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Min_25筛学习笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/27/%E5%B9%B3%E8%A1%A1%E6%A0%91%E6%A8%A1%E6%9D%BF%E9%A2%98%E7%9A%84%E7%9A%84%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E8%A7%A3%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">平衡树模板题的的树状数组解法</div>
+    <a href="/2020/04/13/Min_25%E7%AD%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Min_25筛学习笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
