@@ -10,17 +10,17 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="吴恩达 机器学习入门 学习笔记最后更新于2020.4.17 2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他">
+  <meta name="description" content="吴恩达 机器学习入门 学习笔记最后更新于2020.4.18 2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他">
 <meta property="og:type" content="article">
 <meta property="og:title" content="吴恩达机器学习学习笔记">
-<meta property="og:url" content="http://zodiacnumblzw.github.io/2020/04/17/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:url" content="http://zodiacnumblzw.github.io/2020/04/19/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="SakuyaのBlog">
-<meta property="og:description" content="吴恩达 机器学习入门 学习笔记最后更新于2020.4.17 2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他">
+<meta property="og:description" content="吴恩达 机器学习入门 学习笔记最后更新于2020.4.18 2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Sigmoid.png">
 <meta property="og:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%AD%A3%E8%A7%84%E6%96%B9%E7%A8%8B%E6%AD%A3%E5%88%99%E5%8C%96.png">
-<meta property="article:published_time" content="2020-04-17T15:17:33.672Z">
-<meta property="article:modified_time" content="2020-04-17T15:16:42.589Z">
+<meta property="article:published_time" content="2020-04-19T14:19:47.765Z">
+<meta property="article:modified_time" content="2020-04-19T14:17:50.090Z">
 <meta property="article:author" content="Sakuya">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Sigmoid.png">
@@ -226,8 +226,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/04/17/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-        <time datetime="2020-04-17T15:17:33.672Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
+<a href="/2020/04/19/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+        <time datetime="2020-04-19T14:19:47.765Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-19</time>
 </a>
 
   
@@ -240,7 +240,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">4.8k字</span>
+      <span class="post-count">5.1k字</span>
     </span>
   </span>
 
@@ -249,7 +249,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">18分</span>
+      <span class="post-count">19分</span>
     </span>
   </span>
 </div>
@@ -260,7 +260,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="吴恩达-机器学习入门-学习笔记"><a href="#吴恩达-机器学习入门-学习笔记" class="headerlink" title="吴恩达 机器学习入门 学习笔记"></a>吴恩达 机器学习入门 学习笔记</h1><p><strong>最后更新于2020.4.17</strong></p>
+    <h1 id="吴恩达-机器学习入门-学习笔记"><a href="#吴恩达-机器学习入门-学习笔记" class="headerlink" title="吴恩达 机器学习入门 学习笔记"></a>吴恩达 机器学习入门 学习笔记</h1><p><strong>最后更新于2020.4.18</strong></p>
 <p>2020.4.7</p>
 <h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><blockquote>
 <p><strong>什么是机器学习？</strong></p>
@@ -388,7 +388,21 @@
 <h5 id="高级优化算法正则化"><a href="#高级优化算法正则化" class="headerlink" title="高级优化算法正则化"></a>高级优化算法正则化</h5><p>因为我们需要传给<strong>fminunc</strong>一个costFunction函数指针，因此我们只需要在costFunction里面修代码即可，costFunction需要返回代价和梯度向量</p>
 <p>直接调用函数就可以求出正则化的逻辑回归结果</p>
 <p>如果这部分忘记了请再看看第六章的高级优化算法部分</p>
+<p>4.18</p>
 <h3 id="第八章"><a href="#第八章" class="headerlink" title="第八章"></a>第八章</h3><h4 id="线性回归和逻辑回归的缺陷"><a href="#线性回归和逻辑回归的缺陷" class="headerlink" title="线性回归和逻辑回归的缺陷"></a>线性回归和逻辑回归的缺陷</h4><p>当特征数量$n$很大的时候，特征见间的简单组合的数量就已经非常大了，比如有100个特征，一次项有$O(n)$个，二次项有$O(n^2)$个…简单的组合的数量就已经很庞大了，如果二次项只取平方项，那么舍去的项会变得更多，拟合就不是特别好。对于这种特征非常多的情形，我们引入了神经网络算法</p>
+<h4 id="想法的由来"><a href="#想法的由来" class="headerlink" title="想法的由来"></a>想法的由来</h4><p>人脑的某一个部位可以学会其他部位的功能，因此想要模拟一个人脑可能不需要无数个算法，可能是一个算法，但能执行所有的功能，我们目前人类也在研究这种算法</p>
+<h4 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h4><blockquote>
+<p>神经元：若干个输入，经过激活函数处理之后产生一个输出</p>
+<p>偏置神经元：$x_0$，看情况添加，值永远为1</p>
+<p>激活函数：神经元体处理数据的方式</p>
+<p>神经网络：若干组神经元构成的网络</p>
+</blockquote>
+<p>从输入层到输出层中间经历了若干个隐藏层</p>
+<p>每从一个层转移到下一个层都经过了一次矩阵乘法</p>
+<p>从第j层到第j+1层的转移所乘的一个矩阵大小是$(S_j+1)S_{j+1}$的，因为本层还计入了偏置神经元</p>
+<p>AND，OR，XOR，NOT均可以用一个神经元细胞来实现，实现方法可以看看PPT，不再赘述</p>
+<h4 id="多元分类"><a href="#多元分类" class="headerlink" title="多元分类"></a>多元分类</h4><p>如果是简单的分类问题我们可以在输出层用一个神经元，0代表一类，1代表另一类。</p>
+<p>如果是多元的，比如分成K类，那么输出层有K个神经元，第i类的情况是第i个神经元输出值为1，其余均为0</p>
 
     
 
@@ -435,7 +449,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://ZodiacNumblzw.github.io/2020/04/17/吴恩达机器学习学习笔记/" title="吴恩达机器学习学习笔记" target="_blank">http://ZodiacNumblzw.github.io/2020/04/17/吴恩达机器学习学习笔记/</a>
+          <a href="http://ZodiacNumblzw.github.io/2020/04/19/吴恩达机器学习学习笔记/" title="吴恩达机器学习学习笔记" target="_blank">http://ZodiacNumblzw.github.io/2020/04/19/吴恩达机器学习学习笔记/</a>
         </li>
         
         <li>
@@ -502,7 +516,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zodiacnumblzw.github.io/2020/04/17/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zodiacnumblzw.github.io/2020/04/19/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -730,11 +744,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">wqs二分</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">平衡树</a>
+                <a href="javascript:void(0)" class="js-tag color4">主席树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -750,7 +760,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">主席树</a>
+                <a href="javascript:void(0)" class="js-tag color1">wqs二分</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">平衡树</a>
               </li>
              
               <li class="article-tag-list-item">
