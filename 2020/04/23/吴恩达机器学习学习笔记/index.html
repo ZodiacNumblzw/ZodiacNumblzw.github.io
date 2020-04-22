@@ -10,17 +10,19 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="吴恩达 机器学习入门 学习笔记最后更新于2020.4.18 2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他">
+  <meta name="description" content="吴恩达 机器学习入门 学习笔记最后更新于2020.4.23 2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他">
 <meta property="og:type" content="article">
 <meta property="og:title" content="吴恩达机器学习学习笔记">
-<meta property="og:url" content="http://zodiacnumblzw.github.io/2020/04/19/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:url" content="http://zodiacnumblzw.github.io/2020/04/23/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="SakuyaのBlog">
-<meta property="og:description" content="吴恩达 机器学习入门 学习笔记最后更新于2020.4.18 2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他">
+<meta property="og:description" content="吴恩达 机器学习入门 学习笔记最后更新于2020.4.23 2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Sigmoid.png">
 <meta property="og:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%AD%A3%E8%A7%84%E6%96%B9%E7%A8%8B%E6%AD%A3%E5%88%99%E5%8C%96.png">
-<meta property="article:published_time" content="2020-04-19T14:19:47.765Z">
-<meta property="article:modified_time" content="2020-04-19T14:17:50.090Z">
+<meta property="og:image" content="http://zodiacnumblzw.github.io/2020/04/23/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%5Cimages%5C%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%5C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95.png">
+<meta property="og:image" content="http://zodiacnumblzw.github.io/2020/04/23/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%5Cimages%5C%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%5C%E5%81%8F%E5%AF%BC%E6%95%B0.png">
+<meta property="article:published_time" content="2020-04-22T16:19:56.854Z">
+<meta property="article:modified_time" content="2020-04-22T16:19:49.375Z">
 <meta property="article:author" content="Sakuya">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Sigmoid.png">
@@ -226,8 +228,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/04/19/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-        <time datetime="2020-04-19T14:19:47.765Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-19</time>
+<a href="/2020/04/23/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+        <time datetime="2020-04-22T16:19:56.854Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-23</time>
 </a>
 
   
@@ -240,7 +242,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">5.1k字</span>
+      <span class="post-count">7.1k字</span>
     </span>
   </span>
 
@@ -249,7 +251,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">19分</span>
+      <span class="post-count">27分</span>
     </span>
   </span>
 </div>
@@ -260,7 +262,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="吴恩达-机器学习入门-学习笔记"><a href="#吴恩达-机器学习入门-学习笔记" class="headerlink" title="吴恩达 机器学习入门 学习笔记"></a>吴恩达 机器学习入门 学习笔记</h1><p><strong>最后更新于2020.4.18</strong></p>
+    <h1 id="吴恩达-机器学习入门-学习笔记"><a href="#吴恩达-机器学习入门-学习笔记" class="headerlink" title="吴恩达 机器学习入门 学习笔记"></a>吴恩达 机器学习入门 学习笔记</h1><p><strong>最后更新于2020.4.23</strong></p>
 <p>2020.4.7</p>
 <h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><blockquote>
 <p><strong>什么是机器学习？</strong></p>
@@ -333,10 +335,10 @@
 <p>引入<strong>Sigmoid函数</strong>，也被称为<strong>Logistic函数</strong><br>$$<br>S(x)=\frac{1}{1+e^{-x}}<br>$$<br>这是一个关于$(0,\frac{1}{2})$对称，且值域是$(0,1)$<br>$$<br>S’(x)=\frac{e^{-x}}{(1+e^{-x})^2}=S(x)(1-S(x))<br>$$<br><img src="/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Sigmoid.png" alt="Sigmoid"></p>
 <h4 id="Logistic回归"><a href="#Logistic回归" class="headerlink" title="Logistic回归"></a>Logistic回归</h4><p>利用$h_{\theta}(X)=\frac{1}{1+e^{\theta^TX}}$去拟合数据集</p>
 <p>其中$\theta$是我们需要调整的系数，$X$是每一组数据集，$h_{\theta}$最后的结果在$(0,1)$之间，并且指代的是此时y为1的概率。</p>
-<p>我们可以假设$h_{\theta}(X)$大于等于0.5时$y$取1，否则取0，此时我们还需要设定一个代价函数$J(\theta)$去代表$\theta$时的代价<br>$$<br>J(\theta)=\alpha \frac{1}{m}(yln(h_{\theta}(X))+(1-y)ln(1-h_{\theta}(X)))<br>$$</p>
+<p>我们可以假设$h_{\theta}(X)$大于等于0.5时$y$取1，否则取0，此时我们还需要设定一个代价函数$J(\theta)$去代表$\theta$时的代价<br>$$<br>J(\theta)=-\alpha \frac{1}{m}(yln(h_{\theta}(X))+(1-y)ln(1-h_{\theta}(X)))<br>$$</p>
 <p>为什么要用<strong>Sigmoid函数</strong>呢？吴老师说根据极大似然估计得出的函数</p>
-<p>并且还有一个很重要的性质就是$J(\theta)$关于$\theta_i$的偏导数和之前的线性回归中的对应的偏导数形式完全一样，都是<br>$$<br>\alpha \frac{1}{m}\sum_{j=1}^{m}(h_{\theta}(X^{(i)})-y)x_j^{(i)}<br>$$</p>
-<h5 id="梯度下降算法"><a href="#梯度下降算法" class="headerlink" title="梯度下降算法"></a>梯度下降算法</h5><p>因此可以得到梯度下降算法的解法<br>$$<br>\theta_j:=\theta_j-\frac{\partial J(\theta)}{\partial \theta_j}<br>$$<br>即<br>$$<br>\theta_j:=\theta_j-\alpha \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X^{(i)})-y)x_j^{(i)}<br>$$</p>
+<p>并且还有一个很重要的性质就是$J(\theta)$关于$\theta_i$的偏导数和之前的线性回归中的对应的偏导数形式完全一样，都是<br>$$<br>-\alpha \frac{1}{m}\sum_{j=1}^{m}(h_{\theta}(X^{(i)})-y)x_j^{(i)}<br>$$</p>
+<h5 id="梯度下降算法"><a href="#梯度下降算法" class="headerlink" title="梯度下降算法"></a>梯度下降算法</h5><p>因此可以得到梯度下降算法的解法<br>$$<br>\theta_j:=\theta_j-\frac{\partial J(\theta)}{\partial \theta_j}<br>$$<br>即（注意此时$J$中的负号已经拿进括号中了）<br>$$<br>\theta_j:=\theta_j-\alpha \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X^{(i)})-y)x_j^{(i)}<br>$$</p>
 <h5 id="高级优化算法"><a href="#高级优化算法" class="headerlink" title="高级优化算法"></a>高级优化算法</h5><p>除了梯度下降算法之外，Octave内置有<strong>fminunc</strong>函数可以自动进行Logistic回归，并且效率极高，不用选择学习率$\alpha$</p>
 <p>解决逻辑回归的算法还有</p>
 <p><strong>Conjugate gradient</strong></p>
@@ -403,6 +405,50 @@
 <p>AND，OR，XOR，NOT均可以用一个神经元细胞来实现，实现方法可以看看PPT，不再赘述</p>
 <h4 id="多元分类"><a href="#多元分类" class="headerlink" title="多元分类"></a>多元分类</h4><p>如果是简单的分类问题我们可以在输出层用一个神经元，0代表一类，1代表另一类。</p>
 <p>如果是多元的，比如分成K类，那么输出层有K个神经元，第i类的情况是第i个神经元输出值为1，其余均为0</p>
+<p>4.19-4.22</p>
+<h3 id="第九章"><a href="#第九章" class="headerlink" title="第九章"></a>第九章</h3><p>学习神经网络的主要难度在于，对于之前来说，这是一个维度的上升，不仅仅是在输出样本上，还体现在层数的扩展上</p>
+<h4 id="多元分类问题中神经网络算法的代价函数"><a href="#多元分类问题中神经网络算法的代价函数" class="headerlink" title="多元分类问题中神经网络算法的代价函数"></a>多元分类问题中神经网络算法的代价函数</h4><p>我们先来看一下Logistic回归中的代价函数（包含正则化）<br>$$<br>J(\theta)=-\frac{1}{m}(\sum_{i=1}^{m}y^{(i)}log(h_{\theta}(X)+(1-y^{(i)})(log(1-h_{\theta}(X))))+\frac{\lambda}{2m}\sum_{i=1}^{n}\theta_{i}^2<br>$$<br>类比上述公式，我们写出对于K个输出时，输出层的代价函数（课件中有部分细节错误）</p>
+<p>定义$X_{jk}^(i)$为第$i$个数据集中，第$j$层的第$k$个输入数据</p>
+<p>$$<br>J(\Theta)=-\frac{1}{m}(\sum_{i=1}^m\sum_{k=1}^Ky_k^{(i)}log(h_{\Theta^{(L-1)}}(X^{(i)})<em>k)+(1-y_k^{(i)})log(1-h</em>{\Theta^{(L-1)}}(X^{(i)})<em>k)+\frac{\lambda}{2m}\sum</em>{l=1}^{L-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(\Theta_{ji}^{(l)})^2<br>$$<br>看起来有点复杂，其实就是一个类比（我最擅长类比了）</p>
+<p>此时的$y$已经是一个矩阵，一维是数据组数，一维是输出向量，$\Theta$实则是一个若干个二维矩阵构成的集合（因为此时这些二维矩阵的size不完全相同，因此构成不了三维矩阵）$X$依然是一个矩阵，因为这是输出层的代价，所以$h_{\Theta}$必须用第$L-1$层的$\Theta$，一开始惩罚函数有点不太理解，为什么要把之前的$\Theta$矩阵中的数全部加起来，后来想了下，加上去也没影响，对于第$L-1$层来说，前面的值都可以看作常数了，和$\theta_0$差不多，如果要减小代价，本质上就是调整第$L-1$层的$\Theta$。</p>
+<h4 id="反向传播算法"><a href="#反向传播算法" class="headerlink" title="反向传播算法"></a>反向传播算法</h4><p>类比前面的Logistic算法和线性回归算法，我们知道了我们的结果和数据集中的答案，从而可以很轻松的求出我们的代价和梯度，但是在神经网络中，我们需要调整每一层$\Theta$中的数据，从而我们需要每一层的计算结果和理想结果，这个时候我们直接从左往右计算是不能得到理想结果的，只能得到我们的计算结果，因此我们需要计算完计算结果之后，从后往前，考虑上数据集中的实际结果，从而推算出中间每一层的理想结果，这个就是这个算法的由来。（虽然还是不太清楚公式怎么来的）</p>
+<p>首先类比Logistic回归中的求梯度的方式</p>
+<p>对于上述的$J(\theta)$</p>
+<p>我们不难类比得到它的偏导数如下：（这个地方还是求的第$L-1$层到第$L$层的代价函数的梯度）<br>$$<br>\frac{\part J(\Theta)}{\part \Theta_{jk}}=-\frac{1}{m}(\sum_{i=1}^m y_k^{(i)}-h_{\Theta^{(L-1)}}(X^{(i)})<em>k)X</em>{jk}^{(i)}+\frac{\lambda}{m}\Theta_{jk}<br>$$</p>
+<p><strong>注意，这个函数的偏导数是可以直接求出来的！！！而在吴老师的课程中，跳过了这一步，直接介绍了下一步，因此看起来会有点跳跃</strong></p>
+<p>我们因为知道最后一层的实际答案$y$，因此可以求出最后一层的代价，但是我们不知道中间的隐藏层的“实际答案”，因此需要从最后的答案反推每一层我们期望的”y”的值是多少，得到每一层的”y”我们自然可以求得每一层的梯度</p>
+<p>之后我们定义输出层的误差向量为<br>$$<br>\delta^{(L)}=a^{(L)}-y<br>$$<br>那么我们可以得出第$L$层的梯度向量为（这里的$X_j$代表第j层输入数据，这里是第$L-1$的输出数据）<br>$$<br>\frac{\part J(\Theta)}{\part \Theta_{j}^{(L-1)}}=\frac{1}{m}(\delta^{(l)}X_j+\lambda\Theta_j^{(L-1)})=\frac{1}{m}(\delta^{(l)}a^{(L)}+\lambda\Theta_j^{(L-1)})<br>$$<br>我们类比最后一层求代价的方式，只需要求出每一层的$\delta$就可以了</p>
+<p>之后引入一个神奇的公式，就可以计算出每一层的$\delta$了，很是类似于向前传播算法的逆运算<br>$$<br>\delta^{(l)}=(\Theta^{(l)})^T\delta^{(l+1)}.\ast g’(z^{(l)})\ \ \ \ \ \  \ \ \ (1&lt;l&lt;L)<br>$$<br>由sigmoid函数的性质得到如下的式子<br>$$<br>\delta^{(l)}=(\Theta^{(l)})^T\delta^{(l+1)}.\ast g(z^{(l)})(1-g(z^{(l)}))\ \ \ \ \ \  \ \ \ (1&lt;l&lt;L)<br>$$<br>化简得<br>$$<br>\delta^{(l)}=(\Theta^{(l)})^T\delta^{(l+1)}.\ast a^{(l)}(1-a^{(l)})\ \ \ \ \ \  \ \ \ (1&lt;l&lt;L)<br>$$</p>
+<p>很是神奇</p>
+<p><strong>伪代码如下：</strong></p>
+<p><img src="%5Cimages%5C%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%5C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95.png" alt="反向传播算法"></p>
+<p>矩阵化得出<br>$$<br>\Delta^{(l)}:=\Delta^{(l)}+\delta^{(l+1)}(a^{(l)})^T<br>$$</p>
+<p>遍历每一组数据集，我们累加就可以得出未正则化的梯度矩阵的$m$倍，最后再加上正则化的项即可</p>
+<p>我们抛开Logistic回归，考虑利用$cost(i)$去类比衡量系数的好坏，那么$\delta_j^{(i)}$实际上是$cost(i)$关于$z_j^{(i)}$的偏导数。</p>
+<p>为了使用<strong>fminunc函数</strong>，我们需要传入代价函数并返回一个梯度向量和初始话的$\theta$向量，但是目前我们的$\Theta$和梯度均为矩阵，因此我们需要将矩阵转化为向量传入，进入函数后再通过向量reshape成矩阵进行处理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">thetaVec&#x3D;[Theta1(:);Theta2(:);Theta3(:)];	%将三个矩阵转为一个向量</span><br><span class="line"></span><br><span class="line">%将一个向量分解为三个矩阵</span><br><span class="line">reshape(thetaVec(1:110),10,11)	%将第1到第110的元素构成10*11的矩阵</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>双侧差分——用于梯度检验，保证自己推的公式没有错</strong></p>
+<p>我们利用<br>$$<br>\frac{\mathsf{d}J(\theta)}{\mathsf{d}\theta}=\frac{J(\theta+\epsilon)-J(\theta-\epsilon)}{2\epsilon}<br>$$<br>来表示对$J$倒数的近似，$\epsilon$的范围大概是$10^{-4}$，用双侧差分会比单侧的效果更好</p>
+<p>当然，我们也可以用类似的形式去近似偏导数</p>
+<p><img src="%5Cimages%5C%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%5C%E5%81%8F%E5%AF%BC%E6%95%B0.png" alt="偏导数"></p>
+<p>伪代码如上</p>
+<p>这种方法只是为了验证手动求导的公式是否正确，并不能代替来求偏导，可能会有精度误差，并且利用for循环，计算起来十分费时间，没有用到向量化的思想</p>
+<h5 id="随机初始化"><a href="#随机初始化" class="headerlink" title="随机初始化"></a>随机初始化</h5><p>以全0初始化往往会高度冗余，因此我们考虑利用随机初始化的方式</p>
+<p>将$\Theta$矩阵初始初始化为一个比较接近0的，每个值的大小都在$[-\epsilon,epsilon]$之间的一个矩阵</p>
+<h5 id="神经网络算法的构建"><a href="#神经网络算法的构建" class="headerlink" title="神经网络算法的构建"></a>神经网络算法的构建</h5><p>神经网络是一种网状结构，包含输入层，隐藏层和输出层，输入层的神经元个数和我们的数据集相关，输出层的输出个数与分类算法中的类别相关（分n类一般就有n个节点）。那么对于隐藏层呢，一个比较合理的选择是选用一个隐藏层，另一个比较合理的选择是多个隐藏层的时候，每个隐藏层的节点个数相等（一般来说隐藏单元越越好，不过计算量会变大）</p>
+<h5 id="神经网络算法实现的步骤："><a href="#神经网络算法实现的步骤：" class="headerlink" title="神经网络算法实现的步骤："></a>神经网络算法实现的步骤：</h5><p>1.初始化随机的$\Theta$矩阵</p>
+<p>2.正向传播算法算出每个神经元的激活函数值</p>
+<p>3.算出代价函数$J(\Theta)$</p>
+<p>4.反向传播算法得出$\Delta$矩阵和梯度矩阵</p>
+<p>5.利用梯度检测验证反向传播是否正确</p>
+<p>6.利用梯度下降或其他高级算法最小化代价函数</p>
+<p>这一章总算学完了，中间推式子有的地方也想了一会，提高维度的确会使得难度上升不少。</p>
+<p>4.23</p>
+<h3 id="第十章"><a href="#第十章" class="headerlink" title="第十章"></a>第十章</h3><p>如何检测你的学习算法是否比较合理，通常的做法并不是增加数据集的个数，这样往往会很浪费时间。</p>
+<h4 id="利用测试数据集"><a href="#利用测试数据集" class="headerlink" title="利用测试数据集"></a>利用测试数据集</h4><p>将数据集7:3分为学习数据集和测试数据集，通过计算测试数据集在学习后的$J(\theta)$中的代价来评估学习算法的好坏</p>
 
     
 
@@ -449,7 +495,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://ZodiacNumblzw.github.io/2020/04/19/吴恩达机器学习学习笔记/" title="吴恩达机器学习学习笔记" target="_blank">http://ZodiacNumblzw.github.io/2020/04/19/吴恩达机器学习学习笔记/</a>
+          <a href="http://ZodiacNumblzw.github.io/2020/04/23/吴恩达机器学习学习笔记/" title="吴恩达机器学习学习笔记" target="_blank">http://ZodiacNumblzw.github.io/2020/04/23/吴恩达机器学习学习笔记/</a>
         </li>
         
         <li>
@@ -516,7 +562,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zodiacnumblzw.github.io/2020/04/19/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zodiacnumblzw.github.io/2020/04/23/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -748,6 +794,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">wqs二分</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">平衡树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
@@ -757,14 +811,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">整除分块</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">wqs二分</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">平衡树</a>
               </li>
              
               <li class="article-tag-list-item">
