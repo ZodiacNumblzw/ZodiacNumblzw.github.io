@@ -13,16 +13,16 @@
   <meta name="description" content="吴恩达 机器学习入门 学习笔记最后更新于2020.4.23 2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他">
 <meta property="og:type" content="article">
 <meta property="og:title" content="吴恩达机器学习学习笔记">
-<meta property="og:url" content="http://zodiacnumblzw.github.io/2020/04/23/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:url" content="http://zodiacnumblzw.github.io/2020/04/29/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="SakuyaのBlog">
 <meta property="og:description" content="吴恩达 机器学习入门 学习笔记最后更新于2020.4.23 2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Sigmoid.png">
 <meta property="og:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%AD%A3%E8%A7%84%E6%96%B9%E7%A8%8B%E6%AD%A3%E5%88%99%E5%8C%96.png">
-<meta property="og:image" content="http://zodiacnumblzw.github.io/2020/04/23/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%5Cimages%5C%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%5C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95.png">
-<meta property="og:image" content="http://zodiacnumblzw.github.io/2020/04/23/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%5Cimages%5C%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%5C%E5%81%8F%E5%AF%BC%E6%95%B0.png">
-<meta property="article:published_time" content="2020-04-22T16:19:56.854Z">
-<meta property="article:modified_time" content="2020-04-22T16:19:49.375Z">
+<meta property="og:image" content="http://zodiacnumblzw.github.io/2020/04/29/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%5Cimages%5C%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%5C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95.png">
+<meta property="og:image" content="http://zodiacnumblzw.github.io/2020/04/29/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%5Cimages%5C%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%5C%E5%81%8F%E5%AF%BC%E6%95%B0.png">
+<meta property="article:published_time" content="2020-04-29T13:30:09.611Z">
+<meta property="article:modified_time" content="2020-04-29T12:52:38.965Z">
 <meta property="article:author" content="Sakuya">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Sigmoid.png">
@@ -228,8 +228,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/04/23/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-        <time datetime="2020-04-22T16:19:56.854Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-23</time>
+<a href="/2020/04/29/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+        <time datetime="2020-04-29T13:30:09.611Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
 </a>
 
   
@@ -242,7 +242,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">7.1k字</span>
+      <span class="post-count">8.6k字</span>
     </span>
   </span>
 
@@ -251,7 +251,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">27分</span>
+      <span class="post-count">32分</span>
     </span>
   </span>
 </div>
@@ -277,7 +277,7 @@
 
 
 
-<p>2020.4.8</p>
+<h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><p>2020.4.8</p>
 <h3 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h3><p>第二章主要介绍了线性回归的算法——梯度下降算法</p>
 <blockquote>
 <p><strong>代价函数：</strong>线性回归中每个样例点到拟合方程的y的差值的平方和。</p>
@@ -448,8 +448,47 @@
 <p>这一章总算学完了，中间推式子有的地方也想了一会，提高维度的确会使得难度上升不少。</p>
 <p>4.23</p>
 <h3 id="第十章"><a href="#第十章" class="headerlink" title="第十章"></a>第十章</h3><p>如何检测你的学习算法是否比较合理，通常的做法并不是增加数据集的个数，这样往往会很浪费时间。</p>
-<h4 id="利用测试数据集"><a href="#利用测试数据集" class="headerlink" title="利用测试数据集"></a>利用测试数据集</h4><p>将数据集7:3分为学习数据集和测试数据集，通过计算测试数据集在学习后的$J(\theta)$中的代价来评估学习算法的好坏</p>
-
+<h4 id="利用测试数据集"><a href="#利用测试数据集" class="headerlink" title="利用测试数据集"></a>利用测试数据集</h4><p>将数据集7:3分为训练数据集和测试数据集，通过计算测试数据集在学习后的$J(\theta)$中的代价来评估学习算法的好坏</p>
+<h4 id="如何选择多项式回归的次数"><a href="#如何选择多项式回归的次数" class="headerlink" title="如何选择多项式回归的次数"></a>如何选择多项式回归的次数</h4><p>将数据集按6:2:2分为训练数据集，交叉验证数据集（CV），测试数据集，通过枚举多项式的次数利用学习数据集得到使得代价函数最小的$\Theta$，之后通过交叉验证数据集求出每个多项式对应的代价函数，来选择其中最小的一个次数，最后用测试数据集进行测试。这对于数据集比较少的时候通常会很有用。</p>
+<h4 id="如何选择正则化系数-lambda"><a href="#如何选择正则化系数-lambda" class="headerlink" title="如何选择正则化系数$\lambda$"></a>如何选择正则化系数$\lambda$</h4><p>按照2倍的步长从0,0.01,0.02…10.24枚举正则化系数$\lambda$和上述方式类似，选择一个在交叉验证集中代价函数最小的一组$\lambda$，在知道训练数据集误差和交叉数据集误差的大小的情况下很容易判断当前是过拟合还是欠拟合。</p>
+<blockquote>
+<p>(1)如果训练误差和交叉验证误差都很大并且很接近时，可能是欠拟合</p>
+<p>对于欠拟合情况，增加数据量m的作用是不大的</p>
+<p>(2)如果训练误差很小，交叉误差远大于训练误差，可能是过拟合</p>
+<p>对于过拟合的情况，增加大量的数据量m是有一定的作用的</p>
+</blockquote>
+<h4 id="学习曲线"><a href="#学习曲线" class="headerlink" title="学习曲线"></a>学习曲线</h4><p>横坐标为数据集中的数据量$m$，纵坐标为$error$，绘制$J_{training}(\theta)$，$J_{CV}(\theta)$，观察这两个代价函数的走向即可知道当前的曲线是过拟合还是欠拟合</p>
+<h4 id="解决过拟合和欠拟合的方式"><a href="#解决过拟合和欠拟合的方式" class="headerlink" title="解决过拟合和欠拟合的方式"></a>解决过拟合和欠拟合的方式</h4><blockquote>
+<p>过拟合：</p>
+<p>(1)增加$\lambda$（最省时间的选择）</p>
+<p>(2)减少一些特征</p>
+<p>(3)增加一些数据（比较费时间）</p>
+</blockquote>
+<blockquote>
+<p>欠拟合：</p>
+<p>(1)减少$\lambda$</p>
+<p>(2)增加特征</p>
+</blockquote>
+<h4 id="和神经网络的关系"><a href="#和神经网络的关系" class="headerlink" title="和神经网络的关系"></a>和神经网络的关系</h4><p>隐藏层单元过少可能会造成欠拟合但是计算量较少，过多可能造成过拟合计算量较大，在选择多个隐藏层的时候也可以利用类似的思路，枚举隐藏层个数，选取优的隐藏层个数</p>
+<p>4.23-4.29</p>
+<p>最近的事情比较多，所以也拖了比较久的时间</p>
+<h3 id="第十一章"><a href="#第十一章" class="headerlink" title="第十一章"></a>第十一章</h3><h4 id="分类误差"><a href="#分类误差" class="headerlink" title="分类误差"></a>分类误差</h4><p>​        首先介绍了一下过滤垃圾邮件的词袋算法。在利用机器学习解决一个问题的时候，通常用一个非常简单的算法入手，只花一两天的时间把这个问题解决了，尽管算法不是特别完美，之后用交叉验证数据集来测试并画出学习曲线，从而判断当前算法的问题，决定是否用更多的数据集或特征（编程中也经常出现避免过早优化的问题）。误差分析也十分重要，经常可以通过分类错误的数据集中提取到新的特征</p>
+<p>​        在实现机器学习算法的过程中，需要不断的尝试能想出的特征方案，通过正确率的数据验证的方式来判断哪种方案会更好</p>
+<h4 id="偏斜类"><a href="#偏斜类" class="headerlink" title="偏斜类"></a>偏斜类</h4><p>​        数据集中的数据并不一定是均衡的，在分类问题中有可能被分为1的类数据较少，我们在分析错误率的时候不能以整个数据集作为分母，而是引入如下两个衡量标准</p>
+<h5 id="查准率"><a href="#查准率" class="headerlink" title="查准率"></a>查准率</h5><p>查准率=实际为阳性且判断为阳性/(判断为阳性的数据集)</p>
+<h5 id="召回率"><a href="#召回率" class="headerlink" title="召回率"></a>召回率</h5><p>召回率=实际为阳性且判断为阳性/(实际为阳性的数据集)</p>
+<p><strong>查准率和召回率都是越高越好</strong></p>
+<p>查准率高意味着判断为阳性的准确率越高，召回率越高意味着判断阴性的准确率越高，有点类似于数学中的完备性与纯粹性</p>
+<p>只是查准率高的话只能说明判断为阳性的准确率高，因为可能会有一些数据实际为阳性但被判到了阴性的一类，只是召回率高的话也可能忽略了实际为阴性但是被判为了阳性，因此两个数值都高的话才能说明这个程序比较合理</p>
+<p>在建模的时候经常把数据集中出现较少的类设为1</p>
+<h4 id="查准率和召回率之间的权衡"><a href="#查准率和召回率之间的权衡" class="headerlink" title="查准率和召回率之间的权衡"></a>查准率和召回率之间的权衡</h4><p>​        在逻辑回归中，我们会设定一个临界值当$h_{\theta}(X)$大于这个临界值时被判定为1，否则判定为0，之前介绍的这个临界值默认为$0.5$，这个临界值设定的越大，说明查准率越高，因为判断为阳性的正确率越大，临界值设置的越小，说明召回率越大，判断为阴性的正确率越高，因此我们可以通过设置这个临界值来平衡查准率和召回率</p>
+<h5 id="F-1-Score-F-Score"><a href="#F-1-Score-F-Score" class="headerlink" title="$F_1 Score$($F Score$)"></a>$F_1 Score$($F Score$)</h5><p>如何决策更好的临界值成为了我们要解决的问题</p>
+<p>对于一个临界值，我们设查准率为$P$，召回率为$R$<br>$$<br>F_1\ Score=\frac{2PR}{P+R}\ \ \ \ （调和平均）<br>$$<br>$F_1 Score$越高意味着临界值越好，调和平均不仅仅考虑了$P$和$R$的平均值，还给了两者中的较小值更高的权重</p>
+<h4 id="数据集的处理"><a href="#数据集的处理" class="headerlink" title="数据集的处理"></a>数据集的处理</h4><p>特征的选择非常重要，有用的特征越多，对我们的预测越有帮助。</p>
+<p>数据集的数量越多，过拟合的可能性就越小。</p>
+<p>因此足够的特征可以保证我们的偏差小，大量数据集可以保证我们的方差小，两者结合就是优秀的学习算法</p>
+<p>4.29</p>
+<h3 id="第十二章"><a href="#第十二章" class="headerlink" title="第十二章"></a>第十二章</h3><h4 id="支持向量机（SVM）"><a href="#支持向量机（SVM）" class="headerlink" title="支持向量机（SVM）"></a>支持向量机（SVM）</h4>
     
 
     
@@ -495,7 +534,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://ZodiacNumblzw.github.io/2020/04/23/吴恩达机器学习学习笔记/" title="吴恩达机器学习学习笔记" target="_blank">http://ZodiacNumblzw.github.io/2020/04/23/吴恩达机器学习学习笔记/</a>
+          <a href="http://ZodiacNumblzw.github.io/2020/04/29/吴恩达机器学习学习笔记/" title="吴恩达机器学习学习笔记" target="_blank">http://ZodiacNumblzw.github.io/2020/04/29/吴恩达机器学习学习笔记/</a>
         </li>
         
         <li>
@@ -562,7 +601,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zodiacnumblzw.github.io/2020/04/23/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zodiacnumblzw.github.io/2020/04/29/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -790,15 +829,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">主席树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">wqs二分</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">主席树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">平衡树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">斜率优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -811,14 +858,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">整除分块</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">斜率优化</a>
               </li>
             
             <div class="clearfix"></div>
