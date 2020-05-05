@@ -207,6 +207,110 @@
             
 
   
+    <article id="post-LCA学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2019/10/12/LCA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">LCA学习笔记</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2019/10/12/LCA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+        <time datetime="2019-10-12T06:31:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-12</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="LCA"><a href="#LCA" class="headerlink" title="LCA"></a>LCA</h1><blockquote>
+<p><strong>LCA即为最近公共祖先，这个定义只在有根树中出现</strong></p>
+</blockquote>
+<h3 id="朴素做法"><a href="#朴素做法" class="headerlink" title="朴素做法"></a>朴素做法</h3><blockquote>
+<p>q次查询，每次查询给定u,v两个点，求LCA(u,v)</p>
+</blockquote>
+<p>处理出两个点到根节点的一条链上的节点编号，然后倒序遍历这两个节点编号序列，最后一个相同的值即为LCA(u,v)的编号</p>
+<p>理想状态下，当这棵树为完全二叉树时，时间复杂度为$O(qlog N)$</p>
+<p>当树退化成链的情况下，时间复杂度为$O(q*N)$</p>
+    
+    <a class="article-more-a" href="/2019/10/12/LCA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ST表</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tarjan</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LCA</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2019/10/12/LCA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-莫比乌斯反演" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -602,14 +706,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">斜率优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
@@ -619,6 +715,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">整除分块</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">斜率优化</a>
               </li>
             
             <div class="clearfix"></div>
