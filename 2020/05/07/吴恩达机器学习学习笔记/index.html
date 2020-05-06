@@ -10,19 +10,19 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="吴恩达 机器学习入门 学习笔记最后更新于2020.4.23 2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他">
+  <meta name="description" content="吴恩达 机器学习入门 学习笔记最后更新于2020.5.7 2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="吴恩达机器学习学习笔记">
-<meta property="og:url" content="http://zodiacnumblzw.github.io/2020/04/29/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:url" content="http://zodiacnumblzw.github.io/2020/05/07/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="SakuyaのBlog">
-<meta property="og:description" content="吴恩达 机器学习入门 学习笔记最后更新于2020.4.23 2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他">
+<meta property="og:description" content="吴恩达 机器学习入门 学习笔记最后更新于2020.5.7 2020.4.7 第一章 什么是机器学习？ 计算机从经验E中学习，解决某一任务T，进行某一性能度P，通过P测定测定在T上的表现因经验E而提高。在垃圾邮件过滤这个问题中，E是数据集，T是过滤垃圾邮件，P是垃圾邮件过滤的概率   什么是监督学习和无监督学习？ 监督学习：我们给计算机的数据集中包含输入数据和对应的答案，我们希望程序可以预测出其他数">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Sigmoid.png">
 <meta property="og:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%AD%A3%E8%A7%84%E6%96%B9%E7%A8%8B%E6%AD%A3%E5%88%99%E5%8C%96.png">
-<meta property="og:image" content="http://zodiacnumblzw.github.io/2020/04/29/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%5Cimages%5C%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%5C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95.png">
-<meta property="og:image" content="http://zodiacnumblzw.github.io/2020/04/29/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%5Cimages%5C%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%5C%E5%81%8F%E5%AF%BC%E6%95%B0.png">
-<meta property="article:published_time" content="2020-04-29T13:30:09.611Z">
-<meta property="article:modified_time" content="2020-04-29T12:52:38.965Z">
+<meta property="og:image" content="http://zodiacnumblzw.github.io/2020/05/07/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%5Cimages%5C%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%5C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95.png">
+<meta property="og:image" content="http://zodiacnumblzw.github.io/2020/05/07/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%5Cimages%5C%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%5C%E5%81%8F%E5%AF%BC%E6%95%B0.png">
+<meta property="article:published_time" content="2020-05-06T18:47:01.700Z">
+<meta property="article:modified_time" content="2020-05-06T18:46:53.543Z">
 <meta property="article:author" content="Sakuya">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://zodiacnumblzw.github.io/images/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Sigmoid.png">
@@ -228,8 +228,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/04/29/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-        <time datetime="2020-04-29T13:30:09.611Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
+<a href="/2020/05/07/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+        <time datetime="2020-05-06T18:47:01.700Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-07</time>
 </a>
 
   
@@ -242,7 +242,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">8.6k字</span>
+      <span class="post-count">10.5k字</span>
     </span>
   </span>
 
@@ -251,7 +251,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">32分</span>
+      <span class="post-count">39分</span>
     </span>
   </span>
 </div>
@@ -262,7 +262,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="吴恩达-机器学习入门-学习笔记"><a href="#吴恩达-机器学习入门-学习笔记" class="headerlink" title="吴恩达 机器学习入门 学习笔记"></a>吴恩达 机器学习入门 学习笔记</h1><p><strong>最后更新于2020.4.23</strong></p>
+    <h1 id="吴恩达-机器学习入门-学习笔记"><a href="#吴恩达-机器学习入门-学习笔记" class="headerlink" title="吴恩达 机器学习入门 学习笔记"></a>吴恩达 机器学习入门 学习笔记</h1><p><strong>最后更新于2020.5.7</strong></p>
 <p>2020.4.7</p>
 <h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><blockquote>
 <p><strong>什么是机器学习？</strong></p>
@@ -487,8 +487,41 @@
 <h4 id="数据集的处理"><a href="#数据集的处理" class="headerlink" title="数据集的处理"></a>数据集的处理</h4><p>特征的选择非常重要，有用的特征越多，对我们的预测越有帮助。</p>
 <p>数据集的数量越多，过拟合的可能性就越小。</p>
 <p>因此足够的特征可以保证我们的偏差小，大量数据集可以保证我们的方差小，两者结合就是优秀的学习算法</p>
-<p>4.29</p>
-<h3 id="第十二章"><a href="#第十二章" class="headerlink" title="第十二章"></a>第十二章</h3><h4 id="支持向量机（SVM）"><a href="#支持向量机（SVM）" class="headerlink" title="支持向量机（SVM）"></a>支持向量机（SVM）</h4>
+<p>4.29-5.7</p>
+<h3 id="第十二章"><a href="#第十二章" class="headerlink" title="第十二章"></a>第十二章</h3><h4 id="支持向量机（SVM）"><a href="#支持向量机（SVM）" class="headerlink" title="支持向量机（SVM）"></a>支持向量机（SVM）</h4><p>​       假设我们现在需要一个线性分类器，那么SVM或许是一个比较好的想法，他通过计算获得一个用来划分样本点的直线，直线的一侧被预测为一类，另一侧被预测为另一类。这个直线必须满足一侧和另一侧样本点，到该直线的距离的最小值的那个距离最大，也就是恰好是两侧中距离最近的两个点的中垂线的位置，因为这样会让局部扰动的容忍性（robust）。我们需要怎样计算得到这个直线呢？这部分内容在西瓜书上面有详细的推导。</p>
+<p>假设我们有一个超平面来划分数据集 设其方程为<br>$$<br>w^{T}x+b=0<br>$$<br>其中$w$为这个超平面的法向量，$b$用来描述这个超平面的截距</p>
+<p>超平面到原点的距离为<br>$$<br>len=\frac{|b|}{||w||}<br>$$<br>我们可以对所有数据集同时乘上一个足够大的常数，以便之后我们选定直线后能保证正样本带入进平面方程的左式，能尽量使结果大于1，负样本小于-1（这样做其实就是扩大的点的间距，为了方便，以1为基准，对算法来说没有影响）</p>
+<p>那么一个点到这个超平面的距离为：<br>$$<br>r=\frac{|w^{T}x+b|}{||w||}<br>$$<br>可以理解为$x$向这个超平面投影加上截距</p>
+<p>因为我们要使：<br>$$<br>当y=1时w^{T}x+b\geq1，当y=-1时w^{T}x+b\leq-1<br>$$<br>所以正样本的到平面的最小距离为<br>$$<br>\gamma=\frac{1}{||w||}<br>$$<br>负样本同样如此。</p>
+<p>因此我们需要找到一个超平面使得$2\gamma$最大，也就是使得$||w||$最小</p>
+<p>即使得$\sum_{i=1}^{n}\theta_i^{2}$最小，并且还需要保证<br>$$<br>(w^{T}x_i+b)y_i\geq1<br>$$<br>这就是SVM的基本形式</p>
+<p>吴老师的课程中没有后续的解决方案了，因此我们直接进入核函数的部分</p>
+<h4 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h4><p>核函数的目的是将原来的数据提取一些特征，通过一层的变换使得这组数据可以被线性分类器所分割，这种方法是结合了SVM所使用的方法，并且弥补了SVM身为线性分类器的不足。</p>
+<h5 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h5><p>​        我们假设有一组数据，我们把训练数据集中的每个点当成“基准点”，考虑离某个基准点越近，就和基准点越像，为了预测一组数据，我们把这组数据与基准点的距离求出来，通过高斯分布函数生成一个值，这个高斯分布函数就是我们所说的核函数，这个值代表了与这个基准点的“相似程度”，处理出来每一个值后，我们就意味着可以通过一组数据生成一个m维向量（m为基准点的数量），并且这m个值同样是我们处理这个数据集中抽象出来的特征，之后我们再接着处理每一组数据中抽象出来的这m个特征即可，我们把每一组数据得到的m维向量当成输入数据，放进SVM中跑一遍就行。</p>
+<p>​        核函数的主要目的是对数据进行了变换，可能是从某一维变成了更高维，然后变成了可以用一个超平面来划分的状态，于是就变成了SVM所解决的问题了。</p>
+<p>​        除了上述一些比较重要的，还有一些内容比如正则化的惩罚函数不能再设为$\theta_i^2$了，可能需要再乘上一个和核函数有关的东西。个人理解，感觉这已经有点像神经网络了，只不过多了一层隐藏层去抽象数据的特征并处理我们输入的数据。</p>
+<blockquote>
+<p>线性核函数：不使用核函数，直接SVM</p>
+</blockquote>
+<h5 id="关于调参"><a href="#关于调参" class="headerlink" title="关于调参"></a>关于调参</h5><p>我们把之前的逻辑回归整个式子除以$\lambda$，我们可以得到后面的正则化项系数为1，前面的系数为$\frac{1}{\lambda}$，将其设为$C$，$C$过大会导致过拟合，过小会导致欠拟合，同时高斯分布里的$\sigma$也需要调参，过大会导致方差小偏差大（因为高斯曲线较为平缓，在与样本点距离不近的时候也能得到一个非常大的结果，因此离基准点的距离可能就会被容忍取得更远一点），过小会导致方差大偏差小。</p>
+<p>PS：由于吴老师的课非常细，导致讲的内容不是很深，之后再去啃啃西瓜书去了</p>
+<h4 id="关于计算SVM的注意事项"><a href="#关于计算SVM的注意事项" class="headerlink" title="关于计算SVM的注意事项"></a>关于计算SVM的注意事项</h4><p>推荐直接用成熟的软件包计算，不要自己造轮子浪费时间，可以用liblinear,libsvm。</p>
+<p>对于<strong>特征多数据少</strong>的情况下，为了避免过拟合，可以考虑线性核函数<strong>或者逻辑回归</strong>（逻辑回归nb）</p>
+<p>对于<strong>特征少数据<em>适中</em>（即很多，但是不会过于多）</strong>的情况，选择高斯核函数是一个不错的选择（结果好，时间花费也会很少）</p>
+<p>对于<strong>特征少数据非常多</strong>的情况，用高斯核函数所花费的时间就会非常多。这种情况我们需要尽可能的手动创造特征后，选用线性核函数或者逻辑回归</p>
+<p>不选用神经网络的原因：</p>
+<p>(1)神经网络效率低</p>
+<p>(2)SVM在很多软件中都采用了凸优化的方式，不会考虑局部最优，但神经网络需要考虑</p>
+<p>SVM同样需<strong>要特征缩放</strong>（在第四章的梯度下降法中出现），用来让SVM尽可能多的考虑其他的所有特征而不会被某些特征主导</p>
+<h5 id="默塞尔定理"><a href="#默塞尔定理" class="headerlink" title="默塞尔定理"></a>默塞尔定理</h5><p>我们传入的核函数需要满足这个定理以确保SVM的计算过程得以优化，效率会更高。</p>
+<p>线性核函数，高斯核函数和多项式核函数均满足默塞尔定理</p>
+<p>多项式核函数的形式：<br>$$<br>k(x,l)=(x^{T}l+C)^d  \ \ \ \ \ (C,d为参数)<br>$$<br>不常用，效果通常也不好，一般用于所有数据集均大于0的情况</p>
+<h4 id="多元分类-1"><a href="#多元分类-1" class="headerlink" title="多元分类"></a>多元分类</h4><p>和之前的逻辑回归多元分类类似，使用kSVM，一类一类的分，把一类设为1，其余均设为0，以此类推。一共得到k个$\Theta$矩阵，每一个矩阵都能识别出是否属于一类。（但是如果多个矩阵同时判断一个数据集属于一类的话怎么办呢？？老师似乎没讲）</p>
+<p>2020.5.7 02:39</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>断断续续了好久，终于看完这一节了，结合了自己看的西瓜书和博客，在北京的深夜独自写下的这一篇总结，监督学习总算过了一遍，但是还需要把西瓜书看看呀，吴老师讲的非常好，非常详细，跟着老师看基本上都能看得懂，需要补充知识点的地方也可以去看看西瓜书，比较遗憾的是目前还没能完成一个机器学习相关的项目。感觉自己的数学水平没有高中厉害了，一个式子要看半天看懂2333，但是我还是仍然非常非常非常喜欢数学呀，学完监督学习我当然还会去继续学非监督学习和深度学习的。</p>
+<p>在这里给出coursera的网址，上面也有一些练习题可以练练手</p>
+<p><a href="https://www.coursera.org/learn/machine-learning/home/welcome" target="_blank" rel="noopener">https://www.coursera.org/learn/machine-learning/home/welcome</a></p>
+
     
 
     
@@ -534,7 +567,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://ZodiacNumblzw.github.io/2020/04/29/吴恩达机器学习学习笔记/" title="吴恩达机器学习学习笔记" target="_blank">http://ZodiacNumblzw.github.io/2020/04/29/吴恩达机器学习学习笔记/</a>
+          <a href="http://ZodiacNumblzw.github.io/2020/05/07/吴恩达机器学习学习笔记/" title="吴恩达机器学习学习笔记" target="_blank">http://ZodiacNumblzw.github.io/2020/05/07/吴恩达机器学习学习笔记/</a>
         </li>
         
         <li>
@@ -601,7 +634,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zodiacnumblzw.github.io/2020/04/29/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zodiacnumblzw.github.io/2020/05/07/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -616,18 +649,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/05/06/%E5%90%8C%E4%BD%99%E6%9C%80%E7%9F%AD%E8%B7%AF/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          同余最短路
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/13/Min_25%E7%AD%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Min_25筛学习笔记</div>
+    <a href="/2020/05/06/%E5%90%8C%E4%BD%99%E6%9C%80%E7%9F%AD%E8%B7%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">同余最短路</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -838,11 +862,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">wqs二分</a>
+                <a href="javascript:void(0)" class="js-tag color4">主席树</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">主席树</a>
+                <a href="javascript:void(0)" class="js-tag color1">wqs二分</a>
               </li>
              
               <li class="article-tag-list-item">
