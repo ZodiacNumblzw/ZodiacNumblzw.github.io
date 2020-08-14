@@ -207,6 +207,104 @@
             
 
   
+    <article id="post-用VSCode实现远程代码开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/08/14/%E7%94%A8VSCode%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/" target="_blank">用VSCode实现远程代码开发</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/08/14/%E7%94%A8VSCode%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/" class="archive-article-date">
+        <time datetime="2020-08-14T12:59:29.238Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="用VSCode实现远程代码开发"><a href="#用VSCode实现远程代码开发" class="headerlink" title="用VSCode实现远程代码开发"></a>用VSCode实现远程代码开发</h1><p>有过大厂实习经历的小伙伴肯定有过在开发机上远程开发的经历，想必大家肯定受够了单纯利用vim来开发（精通vim的大神可以不用看了），（我不知道为什么老是有人想用编辑器来代替IDE，其实vim有个比较不错的插件COC，但是身为萌新的我还是不习惯用vim，收到大神的启发，总结一个这样的教程。</p>
+<h3 id="免密ssh登录开发机"><a href="#免密ssh登录开发机" class="headerlink" title="免密ssh登录开发机"></a>免密ssh登录开发机</h3><p>这个其实网上也有很多教程</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
+
+<p>在本地机上生成公钥，私钥对。</p>
+<p>默认目录在~/.ssh中，即用户目录下的隐藏文件夹.ssh中，</p>
+<p>在密钥对的目录中创建一个名为authorized_keys的文件，修改读写权限后将公钥追加到这个文件中。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch authorized_keys</span><br><span class="line">chmod 600 authorized_keys</span><br><span class="line">cat id_rsa.pub &gt;&gt; authorized_keys</span><br></pre></td></tr></table></figure>
+
+<p>之后将authorized_keys文件scp到开发机的用户文件夹下，即 ~/</p>
+<p>example: scp <del>/.ssh/authorized_keys yourname@yourdestination:</del>/</p>
+<p>现在可以做到本机免密ssh到开发机了</p>
+<p>（两台主机免密ssh再反过来做一次即可）</p>
+<h3 id="VSCode的强大插件"><a href="#VSCode的强大插件" class="headerlink" title="VSCode的强大插件"></a>VSCode的强大插件</h3><p>下载VSCode插件 remote-SSH（remote-SSH Editing也会被顺带安装）</p>
+<p>打开搜索栏（Windows是ctrl+shift+P，macos是commed+shift+P）</p>
+<p>搜remote-SSH点那个Connect to host…</p>
+<p>再点Add New ssh Hosts…</p>
+<p>输入你要连接的主机名/IP</p>
+<p>在~/.ssh目录下创建一个vscode_config文件，里面写上如下格式的你的主机名和用户名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Host yourdestination</span><br><span class="line"></span><br><span class="line">User yourname</span><br></pre></td></tr></table></figure>
+
+<p>于是再在vscode中输入这个文件的<strong>绝对路径</strong>/User/xxx/.ssh/vscode_config</p>
+<p>最后别忘记要在远程安装C/C++插件，方便函数跳转</p>
+<p>参考教程：<a href="https://zhuanlan.zhihu.com/p/95678121" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/95678121</a></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/14/%E7%94%A8VSCode%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-吴恩达机器学习学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1003,96 +1101,6 @@
 
 
   
-    <article id="post-主席树学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/01/17/%E4%B8%BB%E5%B8%AD%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">主席树学习笔记</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/01/17/%E4%B8%BB%E5%B8%AD%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-        <time datetime="2020-01-17T11:07:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-17</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="主席树"><a href="#主席树" class="headerlink" title="主席树"></a>主席树</h1><h3 id="主席树的作用"><a href="#主席树的作用" class="headerlink" title="主席树的作用"></a>主席树的作用</h3><p>主席树可以保存每一个版本的线段树/权值线段树</p>
-<h3 id="朴素做法"><a href="#朴素做法" class="headerlink" title="朴素做法"></a>朴素做法</h3><p>如果我们不用主席树，那么我们需要对每一个版本的线段树均建树，这样的时间复杂度是$O(MNlogN)$，空间复杂度是$O(N^2)$，这种复杂度是我们都无法接受的</p>
-<h3 id="主席树的原理"><a href="#主席树的原理" class="headerlink" title="主席树的原理"></a>主席树的原理</h3><p>在修改线段树/权值线段树的时候，我们在修改一个点的信息的时候，只会影响到叶子节点到根节点这一条链上节点的信息，一条链上大概是$log(N)$，因此当前版本的线段树和上一版本的线段树有大量重复的点可以利用，因此我们使用动态开点去实现，时间复杂度是$O(MlogN)$，空间复杂度是$O(MlogN)$</p>
-    
-    <a class="article-more-a" href="/2020/01/17/%E4%B8%BB%E5%B8%AD%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">主席树</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/01/17/%E4%B8%BB%E5%B8%AD%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1247,6 +1255,18 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ST表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tarjan</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LCA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">分治</a>
               </li>
              
@@ -1263,23 +1283,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ST表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tarjan</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LCA</a>
+                <a href="javascript:void(0)" class="js-tag color1">wqs二分</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">主席树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">wqs二分</a>
               </li>
              
               <li class="article-tag-list-item">
