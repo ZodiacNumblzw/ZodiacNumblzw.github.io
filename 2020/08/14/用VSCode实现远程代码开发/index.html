@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://ZodiacNumblzw.github.io">
-  <title>用VSCode实现远程代码开发 | DiamondSplashのBlog</title>
+  <title>DiamondSplashのBlog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="用VSCode实现远程代码开发有过大厂实习经历的小伙伴肯定有过在开发机上远程开发的经历，想必大家肯定受够了单纯利用vim来开发（精通vim的大神可以不用看了），（我不知道为什么老是有人想用编辑器来代替IDE，其实vim有个比较不错的插件COC，但是身为萌新的我还是不习惯用vim，收到大神的启发，总结一个这样的教程。 免密ssh登录开发机这个其实网上也有很多教程 1ssh-keygen  在本地机上">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用VSCode实现远程代码开发">
+<meta property="og:title" content="DiamondSplashのBlog">
 <meta property="og:url" content="http://zodiacnumblzw.github.io/2020/08/14/%E7%94%A8VSCode%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/index.html">
 <meta property="og:site_name" content="DiamondSplashのBlog">
 <meta property="og:description" content="用VSCode实现远程代码开发有过大厂实习经历的小伙伴肯定有过在开发机上远程开发的经历，想必大家肯定受够了单纯利用vim来开发（精通vim的大神可以不用看了），（我不知道为什么老是有人想用编辑器来代替IDE，其实vim有个比较不错的插件COC，但是身为萌新的我还是不习惯用vim，收到大神的启发，总结一个这样的教程。 免密ssh登录开发机这个其实网上也有很多教程 1ssh-keygen  在本地机上">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-14T12:59:29.238Z">
-<meta property="article:modified_time" content="2020-05-23T07:23:11.951Z">
+<meta property="article:modified_time" content="2020-08-14T12:59:29.238Z">
 <meta property="article:author" content="DiamondSplash">
 <meta name="twitter:card" content="summary">
   
@@ -66,7 +66,7 @@
 			<img src="/img/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-			<h1 class="header-author"><a href="/">DiamondSplash</a></h1>
+			<h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -149,7 +149,7 @@
 				</a>
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">DiamondSplash</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -207,54 +207,6 @@
             <article id="post-用VSCode实现远程代码开发" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-  
-  
-    <h1 class="article-title" itemprop="name">
-      用VSCode实现远程代码开发
-    </h1>
-  
-
-
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2020/08/14/%E7%94%A8VSCode%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/" class="archive-article-date">
-        <time datetime="2020-08-14T12:59:29.238Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">430字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
   <div class="article-entry" itemprop="articleBody">
     
     <h1 id="用VSCode实现远程代码开发"><a href="#用VSCode实现远程代码开发" class="headerlink" title="用VSCode实现远程代码开发"></a>用VSCode实现远程代码开发</h1><p>有过大厂实习经历的小伙伴肯定有过在开发机上远程开发的经历，想必大家肯定受够了单纯利用vim来开发（精通vim的大神可以不用看了），（我不知道为什么老是有人想用编辑器来代替IDE，其实vim有个比较不错的插件COC，但是身为萌新的我还是不习惯用vim，收到大神的启发，总结一个这样的教程。</p>
@@ -264,7 +216,7 @@
 <p>在本地机上生成公钥，私钥对。</p>
 <p>默认目录在~/.ssh中，即用户目录下的隐藏文件夹.ssh中，</p>
 <p>在密钥对的目录中创建一个名为authorized_keys的文件，修改读写权限后将公钥追加到这个文件中。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch authorized_keys</span><br><span class="line">chmod 600 authorized_keys</span><br><span class="line">cat id_rsa.pub &gt;&gt; authorized_keys</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch authorized_keys</span><br><span class="line">chmod 600 authorized_keys</span><br><span class="line">cat id_rsa.pub &gt;&gt; authorized_keys </span><br></pre></td></tr></table></figure>
 
 <p>之后将authorized_keys文件scp到开发机的用户文件夹下，即 ~/</p>
 <p>example: scp <del>/.ssh/authorized_keys yourname@yourdestination:</del>/</p>
@@ -280,7 +232,7 @@
 
 <p>于是再在vscode中输入这个文件的<strong>绝对路径</strong>/User/xxx/.ssh/vscode_config</p>
 <p>最后别忘记要在远程安装C/C++插件，方便函数跳转</p>
-<p>参考教程：<a href="https://zhuanlan.zhihu.com/p/95678121" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/95678121</a></p>
+<p>参考教程：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/95678121">https://zhuanlan.zhihu.com/p/95678121</a></p>
 
     
 
@@ -327,7 +279,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://ZodiacNumblzw.github.io/2020/08/14/用VSCode实现远程代码开发/" title="用VSCode实现远程代码开发" target="_blank">http://ZodiacNumblzw.github.io/2020/08/14/用VSCode实现远程代码开发/</a>
+          <a href="http://ZodiacNumblzw.github.io/2020/08/14/用VSCode实现远程代码开发/" title="" target="_blank">http://ZodiacNumblzw.github.io/2020/08/14/用VSCode实现远程代码开发/</a>
         </li>
         
         <li>
@@ -413,14 +365,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          2020 CCPC 网络赛题解
+          (no title)
         
       </div>
     </a>
   
   
     <a href="/2020/05/07/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">吴恩达机器学习学习笔记</div>
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -463,7 +415,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018-2021 <a href="http://ZodiacNumblzw.github.io/" target="_blank">DiamondSplash</a>
+    		&copy; 2018-2023 <a href="http://ZodiacNumblzw.github.io/" target="_blank">DiamondSplash</a>
     	</div>
       	<div class="footer-right">
 			
@@ -631,15 +583,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">wqs二分</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">主席树</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Math</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">wqs二分</a>
               </li>
              
               <li class="article-tag-list-item">
